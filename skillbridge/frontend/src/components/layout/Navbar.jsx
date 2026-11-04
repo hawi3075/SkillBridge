@@ -16,7 +16,8 @@ import {
   Calendar,
   CheckCheck,
   Menu,
-  X
+  X,
+  Search
 } from 'lucide-react';
 
 export const Navbar = () => {
@@ -27,6 +28,7 @@ export const Navbar = () => {
   const [showNotifMenu, setShowNotifMenu] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -59,24 +61,34 @@ export const Navbar = () => {
     navigate('/login');
   };
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/skills?search=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchQuery('');
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <nav className="sb-navbar navbar navbar-expand-lg">
       <div className="container py-1">
-        {/* Brand Logo */}
+        {/* Brand Logo with Graduation Cap */}
         <Link to="/" className="navbar-brand d-flex align-items-center gap-2">
           <div
             style={{
-              width: '38px',
-              height: '38px',
-              background: 'linear-gradient(135deg, #2563EB 0%, #6366F1 100%)',
-              borderRadius: '10px',
+              width: '40px',
+              height: '40px',
+              background: 'linear-gradient(135deg, #1E40AF 0%, #2563EB 60%, #3B82F6 100%)',
+              borderRadius: '12px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#FFFFFF'
+              color: '#FFFFFF',
+              boxShadow: '0 4px 10px rgba(37, 99, 235, 0.25)'
             }}
           >
-            <Sparkles size={20} />
+            <GraduationCap size={24} />
           </div>
           <span className="fw-bolder fs-4" style={{ letterSpacing: '-0.03em', color: '#0F172A' }}>
             Skill<span style={{ color: '#2563EB' }}>Bridge</span>
@@ -94,15 +106,20 @@ export const Navbar = () => {
 
         {/* Links */}
         <div className={`collapse navbar-collapse ${mobileMenuOpen ? 'show' : ''}`}>
-          <ul className="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
+          <ul className="navbar-nav mx-auto mb-2 mb-lg-0 gap-1 align-items-center">
+            <li className="nav-item">
+              <NavLink to="/" end className="nav-link" onClick={() => setMobileMenuOpen(false)}>
+                Home
+              </NavLink>
+            </li>
             <li className="nav-item">
               <NavLink to="/skills" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
-                Explore Skills
+                Courses
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink to="/mentors" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
-                Find Mentors
+                Mentors
               </NavLink>
             </li>
             <li className="nav-item">
@@ -111,19 +128,31 @@ export const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/community" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
-                Community
+              <NavLink to="/about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
+                About
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
-                About
+              <NavLink to="/contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>
+                Contact
               </NavLink>
             </li>
           </ul>
 
           {/* Right Action Menu */}
           <div className="d-flex align-items-center gap-2">
+            {/* Search Pill Input */}
+            <form onSubmit={handleSearchSubmit} className="d-none d-lg-flex position-relative me-2" style={{ width: '200px' }}>
+              <Search size={15} className="position-absolute top-50 start-0 translate-middle-y ms-3 text-muted" />
+              <input
+                type="text"
+                className="form-control form-control-sm rounded-pill ps-5 border-0 shadow-none"
+                placeholder="Search skills..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                style={{ fontSize: '0.825rem', paddingTop: '0.45rem', paddingBottom: '0.45rem', backgroundColor: '#F1F5F9' }}
+              />
+            </form>
             {isAuthenticated ? (
               <>
                 {/* Smart Matches link */}
@@ -292,14 +321,22 @@ export const Navbar = () => {
                 </div>
               </>
             ) : (
-              <>
-                <Link to="/login" className="btn btn-link text-decoration-none text-dark fw-semibold px-3">
-                  Log In
+              <div className="d-flex align-items-center gap-2">
+                <Link
+                  to="/login"
+                  className="btn btn-sm btn-light rounded-pill text-dark fw-semibold px-3 py-1 border shadow-none"
+                  style={{ backgroundColor: '#FFFFFF', fontSize: '0.88rem' }}
+                >
+                  Login
                 </Link>
-                <Link to="/register" className="btn btn-primary d-inline-flex align-items-center gap-1">
-                  <span>Get Started</span>
+                <Link
+                  to="/register"
+                  className="btn btn-sm btn-primary rounded-pill fw-semibold px-3 py-1 shadow-sm"
+                  style={{ backgroundColor: '#1D4ED8', borderColor: '#1D4ED8', fontSize: '0.88rem' }}
+                >
+                  Sign Up
                 </Link>
-              </>
+              </div>
             )}
           </div>
         </div>

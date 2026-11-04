@@ -4,6 +4,7 @@ import { skillApi, userApi } from '../../services/api';
 import SkillCard from '../../components/cards/SkillCard';
 import UserCard from '../../components/cards/UserCard';
 import LoadingSkeleton from '../../components/common/LoadingSkeleton';
+import Modal from '../../components/common/Modal';
 import {
   Sparkles,
   ArrowRight,
@@ -18,7 +19,14 @@ import {
   MessageCircle,
   Zap,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Play,
+  BarChart2,
+  TrendingUp,
+  Briefcase,
+  GraduationCap,
+  Video,
+  Award
 } from 'lucide-react';
 
 export const HomePage = () => {
@@ -27,6 +35,7 @@ export const HomePage = () => {
   const [trendingSkills, setTrendingSkills] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeFaq, setActiveFaq] = useState(null);
+  const [showDemoModal, setShowDemoModal] = useState(false);
 
   useEffect(() => {
     const fetchHomeData = async () => {
@@ -74,126 +83,227 @@ export const HomePage = () => {
   ];
 
   return (
-    <div>
-      {/* 1. Hero Section */}
-      <section className="hero-section">
-        <div className="container">
-          <div className="row align-items-center g-5">
+    <div className="overflow-hidden">
+      {/* 1. Hero Section (Updated to match design) */}
+      <section className="hero-section position-relative">
+        {/* Soft Organic Background Wave Shape */}
+        <div className="hero-wave-bg" />
+        <svg
+          className="position-absolute top-0 end-0 opacity-25 d-none d-lg-block"
+          width="600"
+          height="600"
+          viewBox="0 0 600 600"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ pointerEvents: 'none', zIndex: 0 }}
+        >
+          <path
+            d="M300,50 C450,20 580,150 560,300 C540,450 420,580 270,560 C120,540 20,430 40,280 C60,130 150,80 300,50 Z"
+            fill="url(#paint0_linear)"
+          />
+          <defs>
+            <linearGradient id="paint0_linear" x1="0" y1="0" x2="600" y2="600" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#3B82F6" stopOpacity="0.3" />
+              <stop offset="1" stopColor="#60A5FA" stopOpacity="0.05" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <div className="container position-relative" style={{ zIndex: 1 }}>
+          <div className="row align-items-center g-5 py-2">
+            {/* Left Content Column */}
             <div className="col-lg-6">
-              <div className="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill border bg-white shadow-sm">
-                <span className="badge bg-primary text-white rounded-pill px-2">New</span>
-                <span className="small text-muted fw-medium">The #1 Peer Skill Exchange Network</span>
+              {/* Pill Tag */}
+              <div
+                className="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill"
+                style={{
+                  backgroundColor: '#DBEAFE',
+                  color: '#1D4ED8',
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.02em'
+                }}
+              >
+                <span>🚀 Learn • Practice • Grow</span>
               </div>
 
-              <h1 className="display-4 fw-extrabold mb-3 text-dark" style={{ lineHeight: 1.15 }}>
-                Learn Something New. <br />
-                <span style={{ color: '#2563EB' }}>Teach What You Know.</span>
+              {/* Headline with Yellow Brush Underline */}
+              <h1
+                className="fw-extrabold text-dark mb-3"
+                style={{
+                  fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)',
+                  lineHeight: 1.15,
+                  letterSpacing: '-0.03em'
+                }}
+              >
+                Bridge Your Skills <br />
+                to a{' '}
+                <span className="position-relative text-primary d-inline-block">
+                  Better Future
+                  {/* Yellow/Gold Brush Stroke Underline */}
+                  <svg
+                    className="position-absolute start-0 w-100"
+                    style={{ bottom: '-10px', height: '14px', zIndex: -1 }}
+                    viewBox="0 0 250 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3 11.5C50 3.5 150 1.5 247 9.5C210 13.5 90 14.5 20 12"
+                      stroke="#F59E0B"
+                      strokeWidth="5"
+                      strokeLinecap="round"
+                      opacity="0.9"
+                    />
+                  </svg>
+                </span>
               </h1>
 
-              <p className="lead text-muted mb-4" style={{ lineHeight: 1.6, fontSize: '1.15rem' }}>
-                SkillBridge connects learners and creators who exchange real-world skills without high tuition fees. Match with complementary peers, schedule sessions, and grow together.
+              {/* Subtitle */}
+              <p className="text-muted mb-4" style={{ maxWidth: '520px', fontSize: '1.1rem', lineHeight: 1.6 }}>
+                SkillBridge connects students with skills, resources, and opportunities to build a successful career through 1-on-1 reciprocal peer learning.
               </p>
 
-              <div className="d-flex flex-wrap gap-3 mb-4">
-                <Link to="/skills" className="btn btn-primary btn-lg d-inline-flex align-items-center gap-2 px-4 shadow">
-                  <span>Explore Skills</span>
-                  <ArrowRight size={18} />
+              {/* Action Buttons */}
+              <div className="d-flex flex-wrap align-items-center gap-3 mb-4">
+                <Link
+                  to="/register"
+                  className="btn btn-primary rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2 shadow-sm"
+                  style={{ fontWeight: 600, fontSize: '0.98rem', backgroundColor: '#1D4ED8', borderColor: '#1D4ED8' }}
+                >
+                  <span>Get Started</span>
+                  <ArrowRight size={17} />
                 </Link>
-                <Link to="/register" className="btn btn-outline-primary btn-lg px-4">
-                  Become a Mentor
-                </Link>
+
+                <button
+                  type="button"
+                  onClick={() => setShowDemoModal(true)}
+                  className="btn btn-light rounded-pill px-3 py-2 d-inline-flex align-items-center gap-2 border bg-white shadow-sm hover-lift"
+                  style={{ fontWeight: 600, fontSize: '0.98rem', color: '#0F172A' }}
+                >
+                  <span
+                    className="rounded-circle d-flex align-items-center justify-content-center"
+                    style={{ width: '28px', height: '28px', backgroundColor: '#EFF6FF', color: '#2563EB' }}
+                  >
+                    <Play size={13} fill="#2563EB" />
+                  </span>
+                  <span>Watch Demo</span>
+                </button>
               </div>
 
               {/* Trust Indicators */}
-              <div className="d-flex flex-wrap align-items-center gap-4 text-muted small pt-2">
+              <div className="d-flex flex-wrap align-items-center gap-4 text-muted small pt-1">
                 <span className="d-inline-flex align-items-center gap-1">
                   <CheckCircle2 size={16} color="#10B981" /> 100% Free Peer Exchanges
                 </span>
                 <span className="d-inline-flex align-items-center gap-1">
                   <CheckCircle2 size={16} color="#10B981" /> Verified Peer Ratings
                 </span>
-                <span className="d-inline-flex align-items-center gap-1">
-                  <CheckCircle2 size={16} color="#10B981" /> Transparent Compatibility
-                </span>
               </div>
             </div>
 
-            {/* Hero Visual Card Composition */}
+            {/* Right Visual Composition with Floating Cards */}
             <div className="col-lg-6">
               <div className="position-relative">
-                {/* Main Card */}
-                <div className="sb-card p-4 shadow-lg bg-white position-relative" style={{ zIndex: 2 }}>
-                  <div className="d-flex justify-content-between align-items-center mb-3">
-                    <span className="badge bg-success-subtle text-success border border-success-subtle px-3 py-1">
-                      Perfect Mutual Match Identified!
-                    </span>
-                    <span className="match-score-pill match-score-high">
-                      <Sparkles size={16} /> 98% Match
-                    </span>
+                {/* Organic Backdrop Gradient Blob */}
+                <div
+                  className="position-absolute"
+                  style={{
+                    top: '-10%',
+                    right: '-10%',
+                    width: '120%',
+                    height: '120%',
+                    background: 'radial-gradient(ellipse at center, rgba(191, 219, 254, 0.45) 0%, rgba(224, 237, 255, 0.2) 70%, transparent 100%)',
+                    borderRadius: '40% 60% 70% 30% / 40% 50% 60% 50%',
+                    zIndex: 0,
+                    pointerEvents: 'none'
+                  }}
+                />
+
+                {/* Main Hero Image */}
+                <div
+                  className="position-relative overflow-hidden shadow-lg"
+                  style={{
+                    borderRadius: '28px',
+                    border: '5px solid #FFFFFF',
+                    zIndex: 1,
+                    boxShadow: '0 20px 45px -12px rgba(37, 99, 235, 0.2)'
+                  }}
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80"
+                    alt="SkillBridge Students collaborating around laptop"
+                    className="w-100 d-block"
+                    style={{ height: '400px', objectFit: 'cover', objectPosition: 'center 25%' }}
+                  />
+                  {/* Subtle Vignette Gradient Overlay */}
+                  <div
+                    className="position-absolute inset-0 w-100 h-100"
+                    style={{
+                      top: 0,
+                      left: 0,
+                      background: 'linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.25) 100%)',
+                      pointerEvents: 'none'
+                    }}
+                  />
+                </div>
+
+                {/* Floating Card 1: 10K+ Active Learners (Top Left) */}
+                <div
+                  className="position-absolute d-flex align-items-center gap-3 bg-white p-2 px-3 rounded-4 shadow-lg border animate-float"
+                  style={{
+                    top: '20px',
+                    left: '-20px',
+                    zIndex: 3
+                  }}
+                >
+                  <div
+                    className="rounded-3 d-flex align-items-center justify-content-center"
+                    style={{ width: '40px', height: '40px', backgroundColor: '#EFF6FF', color: '#2563EB' }}
+                  >
+                    <BarChart2 size={22} />
                   </div>
-
-                  {/* Matching Simulation */}
-                  <div className="row g-3 align-items-center my-2">
-                    <div className="col-5 text-center">
-                      <img
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
-                        alt="Alex"
-                        className="rounded-circle border mb-2"
-                        style={{ width: '60px', height: '60px', objectFit: 'cover' }}
-                      />
-                      <div className="fw-bold text-dark small">Alex Morgan</div>
-                      <div className="badge bg-primary-subtle text-primary mt-1">Teaches React.js</div>
-                    </div>
-
-                    <div className="col-2 text-center">
-                      <div
-                        style={{
-                          width: '36px',
-                          height: '36px',
-                          margin: '0 auto',
-                          borderRadius: '50%',
-                          backgroundColor: '#EEF2FF',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          color: '#6366F1'
-                        }}
-                      >
-                        ⚡
-                      </div>
-                    </div>
-
-                    <div className="col-5 text-center">
-                      <img
-                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
-                        alt="Elena"
-                        className="rounded-circle border mb-2"
-                        style={{ width: '60px', height: '60px', objectFit: 'cover' }}
-                      />
-                      <div className="fw-bold text-dark small">Elena Rostova</div>
-                      <div className="badge bg-indigo-subtle text-indigo mt-1" style={{ backgroundColor: '#EEF2FF', color: '#4F46E5' }}>
-                        Teaches Figma UI/UX
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="p-3 bg-light rounded-3 mt-3 text-muted small text-center">
-                    "Alex learns Figma design systems; Elena masters React component architecture. Both grow faster together!"
+                  <div>
+                    <div className="fw-bolder text-dark fs-6 mb-0" style={{ lineHeight: 1.1 }}>10K+</div>
+                    <div className="text-muted small" style={{ fontSize: '0.75rem', fontWeight: 500 }}>Active Learners</div>
                   </div>
                 </div>
 
-                {/* Decorative floating stats */}
+                {/* Floating Card 2: 4.8/5 User Rating (Top Right) */}
                 <div
-                  className="sb-card p-3 shadow position-absolute d-none d-md-flex align-items-center gap-3 bg-white"
-                  style={{ bottom: '-25px', left: '-20px', zIndex: 3 }}
+                  className="position-absolute d-flex align-items-center gap-3 bg-white p-2 px-3 rounded-4 shadow-lg border animate-float-delayed"
+                  style={{
+                    top: '20px',
+                    right: '-20px',
+                    zIndex: 3
+                  }}
                 >
-                  <div className="p-2 bg-primary-subtle rounded-circle text-primary">
-                    <Star size={20} fill="#2563EB" />
+                  <div
+                    className="rounded-3 d-flex align-items-center justify-content-center"
+                    style={{ width: '40px', height: '40px', backgroundColor: '#FEF3C7', color: '#D97706' }}
+                  >
+                    <Star size={20} fill="#F59E0B" color="#F59E0B" />
                   </div>
                   <div>
-                    <div className="fw-bold text-dark">4.9 / 5.0 Average</div>
-                    <div className="text-muted small" style={{ fontSize: '0.75rem' }}>Across 2,400+ Sessions</div>
+                    <div className="fw-bolder text-dark fs-6 mb-0" style={{ lineHeight: 1.1 }}>4.8/5</div>
+                    <div className="text-muted small" style={{ fontSize: '0.75rem', fontWeight: 500 }}>User Rating</div>
                   </div>
+                </div>
+
+                {/* Floating Decorative Typography (Bottom Right) */}
+                <div
+                  className="position-absolute text-white d-none d-sm-block text-end"
+                  style={{
+                    bottom: '20px',
+                    right: '24px',
+                    zIndex: 3,
+                    textShadow: '0 2px 8px rgba(0,0,0,0.7)',
+                    lineHeight: 1.2
+                  }}
+                >
+                  <div className="fs-5 fw-extrabold fst-italic">Learn</div>
+                  <div className="fs-5 fw-extrabold fst-italic">Grow</div>
+                  <div className="fs-5 fw-extrabold fst-italic" style={{ color: '#FCD34D' }}>Succeed</div>
                 </div>
               </div>
             </div>
@@ -201,89 +311,259 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* 2. Platform Statistics Counter */}
-      <section className="py-4 border-bottom bg-white">
+      {/* 2. Docked 4 Feature Cards Ribbon (Directly below Hero) */}
+      <section className="position-relative" style={{ zIndex: 4, marginTop: '-36px' }}>
         <div className="container">
-          <div className="row text-center g-4">
-            <div className="col-6 col-md-3">
-              <h3 className="fw-bolder text-primary mb-1">15,000+</h3>
-              <div className="text-muted small">Registered Learners & Mentors</div>
+          <div className="row g-3">
+            {/* Card 1: Expert-Led Courses */}
+            <div className="col-12 col-sm-6 col-lg-3">
+              <div className="bg-white p-3 px-4 rounded-4 shadow-sm border d-flex align-items-center gap-3 h-100 hover-lift">
+                <div
+                  className="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
+                  style={{ width: '48px', height: '48px', backgroundColor: '#EFF6FF', color: '#2563EB' }}
+                >
+                  <BookOpen size={24} />
+                </div>
+                <div>
+                  <h6 className="fw-bold text-dark mb-1" style={{ fontSize: '0.95rem' }}>Expert-Led Courses</h6>
+                  <p className="text-muted small mb-0" style={{ fontSize: '0.78rem' }}>Learn from industry experts</p>
+                </div>
+              </div>
             </div>
-            <div className="col-6 col-md-3">
-              <h3 className="fw-bolder text-primary mb-1">120+</h3>
-              <div className="text-muted small">Skill Specialties</div>
+
+            {/* Card 2: Real Opportunities */}
+            <div className="col-12 col-sm-6 col-lg-3">
+              <div className="bg-white p-3 px-4 rounded-4 shadow-sm border d-flex align-items-center gap-3 h-100 hover-lift">
+                <div
+                  className="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
+                  style={{ width: '48px', height: '48px', backgroundColor: '#F5F3FF', color: '#7C3AED' }}
+                >
+                  <Briefcase size={24} />
+                </div>
+                <div>
+                  <h6 className="fw-bold text-dark mb-1" style={{ fontSize: '0.95rem' }}>Real Opportunities</h6>
+                  <p className="text-muted small mb-0" style={{ fontSize: '0.78rem' }}>Get connected with jobs</p>
+                </div>
+              </div>
             </div>
-            <div className="col-6 col-md-3">
-              <h3 className="fw-bolder text-primary mb-1">98.4%</h3>
-              <div className="text-muted small">Exchange Match Rate</div>
+
+            {/* Card 3: Track Your Progress */}
+            <div className="col-12 col-sm-6 col-lg-3">
+              <div className="bg-white p-3 px-4 rounded-4 shadow-sm border d-flex align-items-center gap-3 h-100 hover-lift">
+                <div
+                  className="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
+                  style={{ width: '48px', height: '48px', backgroundColor: '#ECFDF5', color: '#059669' }}
+                >
+                  <TrendingUp size={24} />
+                </div>
+                <div>
+                  <h6 className="fw-bold text-dark mb-1" style={{ fontSize: '0.95rem' }}>Track Your Progress</h6>
+                  <p className="text-muted small mb-0" style={{ fontSize: '0.78rem' }}>See your growth journey</p>
+                </div>
+              </div>
             </div>
-            <div className="col-6 col-md-3">
-              <h3 className="fw-bolder text-primary mb-1">$0</h3>
-              <div className="text-muted small">Average Cost per Session</div>
+
+            {/* Card 4: Supportive Community */}
+            <div className="col-12 col-sm-6 col-lg-3">
+              <div className="bg-white p-3 px-4 rounded-4 shadow-sm border d-flex align-items-center gap-3 h-100 hover-lift">
+                <div
+                  className="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
+                  style={{ width: '48px', height: '48px', backgroundColor: '#EEF2FF', color: '#4F46E5' }}
+                >
+                  <Users size={24} />
+                </div>
+                <div>
+                  <h6 className="fw-bold text-dark mb-1" style={{ fontSize: '0.95rem' }}>Supportive Community</h6>
+                  <p className="text-muted small mb-0" style={{ fontSize: '0.78rem' }}>Learn together, grow together</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. How It Works (3 Simple Steps) */}
-      <section className="py-5 bg-white">
-        <div className="container py-4">
+      {/* 3. How It Works: Simple Steps to Success (Matching bottom of screenshot) */}
+      <section className="py-5 position-relative" style={{ backgroundColor: '#F8FAFC' }}>
+        {/* Soft Background Wave Transition */}
+        <div
+          className="position-absolute start-0 w-100"
+          style={{
+            top: 0,
+            height: '60px',
+            background: 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)',
+            pointerEvents: 'none'
+          }}
+        />
+
+        {/* Decorative Watermark Graduation Cap Outline */}
+        <div
+          className="position-absolute bottom-0 end-0 opacity-10 d-none d-xl-block"
+          style={{ transform: 'translate(10%, 10%)', pointerEvents: 'none' }}
+        >
+          <GraduationCap size={320} color="#2563EB" />
+        </div>
+
+        <div className="container py-4 position-relative" style={{ zIndex: 1 }}>
           <div className="text-center mb-5">
-            <span className="badge bg-primary-subtle text-primary px-3 py-1 rounded-pill mb-2">Simple & Intuitive</span>
-            <h2 className="fw-extrabold text-dark">How SkillBridge Works</h2>
-            <p className="text-muted mx-auto" style={{ maxWidth: '540px' }}>
-              Exchange knowledge in three effortless steps. No complicated coins or paywalls—just real peer learning.
+            <span className="small fw-semibold text-primary d-block mb-1" style={{ letterSpacing: '0.08em' }}>
+              — How It Works —
+            </span>
+            <h2 className="display-6 fw-extrabold text-dark mb-2">Simple Steps to Success</h2>
+            <p className="text-muted mx-auto" style={{ maxWidth: '540px', fontSize: '0.98rem' }}>
+              Exchange knowledge in three effortless steps. No expensive tuition fees—just real peer learning.
             </p>
           </div>
 
-          <div className="row g-4">
-            <div className="col-md-4">
-              <div className="sb-card p-4 text-center h-100">
-                <div
-                  className="mx-auto mb-4 rounded-circle d-flex align-items-center justify-content-center"
-                  style={{ width: '64px', height: '64px', backgroundColor: '#EFF6FF', color: '#2563EB', fontSize: '1.25rem', fontWeight: 700 }}
-                >
-                  1
-                </div>
-                <h5 className="fw-bold mb-2">Create Your Profile</h5>
-                <p className="text-muted small" style={{ lineHeight: 1.6 }}>
-                  List the skills you feel confident teaching and the topics you want to learn next. Set your availability and experience level.
-                </p>
-              </div>
+          <div className="position-relative">
+            {/* Playful Handwritten Doodle Annotation on the Left */}
+            <div
+              className="position-absolute d-none d-lg-block"
+              style={{
+                top: '-20px',
+                left: '20px',
+                transform: 'rotate(-8deg)',
+                zIndex: 2
+              }}
+            >
+              <span
+                className="fw-bold fs-6"
+                style={{
+                  color: '#1E40AF',
+                  fontFamily: "'Plus Jakarta Sans', cursive, sans-serif"
+                }}
+              >
+                Your journey <br /> starts here!
+              </span>
+              <svg
+                width="64"
+                height="45"
+                viewBox="0 0 64 45"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="d-block ms-3 mt-1"
+              >
+                <path
+                  d="M10 8 C 25 28, 40 32, 54 22"
+                  stroke="#2563EB"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+                <path
+                  d="M45 20 L 55 22 L 50 32"
+                  stroke="#2563EB"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="none"
+                />
+              </svg>
             </div>
 
-            <div className="col-md-4">
-              <div className="sb-card p-4 text-center h-100">
-                <div
-                  className="mx-auto mb-4 rounded-circle d-flex align-items-center justify-content-center"
-                  style={{ width: '64px', height: '64px', backgroundColor: '#EEF2FF', color: '#6366F1', fontSize: '1.25rem', fontWeight: 700 }}
-                >
-                  2
+            {/* 3 Step Ribbon / Cards */}
+            <div className="steps-ribbon p-4 p-md-5 bg-white mx-auto" style={{ maxWidth: '980px' }}>
+              <div className="row g-4 text-center">
+                {/* Step 1 */}
+                <div className="col-md-4 position-relative">
+                  <div className="step-num-badge">1</div>
+                  <h6 className="fw-bold text-dark mb-2">Create Your Account</h6>
+                  <p className="text-muted small mb-0" style={{ lineHeight: 1.6 }}>
+                    List the skills you feel confident teaching and the topics you want to learn next.
+                  </p>
                 </div>
-                <h5 className="fw-bold mb-2">Smart Compatibility Matching</h5>
-                <p className="text-muted small" style={{ lineHeight: 1.6 }}>
-                  Our algorithm instantly surfaces compatible peers who want your knowledge and offer what you seek, with transparent scores.
-                </p>
-              </div>
-            </div>
 
-            <div className="col-md-4">
-              <div className="sb-card p-4 text-center h-100">
-                <div
-                  className="mx-auto mb-4 rounded-circle d-flex align-items-center justify-content-center"
-                  style={{ width: '64px', height: '64px', backgroundColor: '#ECFDF5', color: '#10B981', fontSize: '1.25rem', fontWeight: 700 }}
-                >
-                  3
+                {/* Step 2 */}
+                <div className="col-md-4 position-relative">
+                  <div className="step-num-badge" style={{ backgroundColor: '#4F46E5' }}>2</div>
+                  <h6 className="fw-bold text-dark mb-2">Explore Courses</h6>
+                  <p className="text-muted small mb-0" style={{ lineHeight: 1.6 }}>
+                    Our smart algorithm surfaces compatible peers offering what you seek and wanting what you offer.
+                  </p>
                 </div>
-                <h5 className="fw-bold mb-2">Connect, Schedule & Learn</h5>
-                <p className="text-muted small" style={{ lineHeight: 1.6 }}>
-                  Send an exchange proposal, chat in real-time, book calendar sessions with automated video rooms, and leave verified reviews.
-                </p>
+
+                {/* Step 3 */}
+                <div className="col-md-4 position-relative">
+                  <div className="step-num-badge" style={{ backgroundColor: '#059669' }}>3</div>
+                  <h6 className="fw-bold text-dark mb-2">Achieve Your Goals</h6>
+                  <p className="text-muted small mb-0" style={{ lineHeight: 1.6 }}>
+                    Send an exchange proposal, chat, book calendar video sessions, and master new skills.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* 4. Watch Demo Walkthrough Modal */}
+      <Modal
+        isOpen={showDemoModal}
+        onClose={() => setShowDemoModal(false)}
+        title="SkillBridge Interactive Demo"
+        size="lg"
+      >
+        <div className="p-2">
+          <div className="text-center mb-4">
+            <span className="badge bg-primary-subtle text-primary px-3 py-1 rounded-pill mb-2">Platform Tour</span>
+            <h4 className="fw-extrabold text-dark">See How SkillBridge Works in 60 Seconds</h4>
+            <p className="text-muted small mx-auto" style={{ maxWidth: '520px' }}>
+              Watch how simple it is to match complementary skills, schedule video tutoring, and build verified credentials.
+            </p>
+          </div>
+
+          {/* Interactive Feature Steps Preview */}
+          <div className="row g-3 mb-4">
+            <div className="col-md-4">
+              <div className="p-3 bg-light rounded-3 border text-center h-100">
+                <div className="mx-auto mb-2 p-2 bg-primary-subtle rounded-circle d-inline-flex text-primary">
+                  <Sparkles size={20} />
+                </div>
+                <h6 className="fw-bold text-dark small mb-1">1. Smart Matching</h6>
+                <p className="text-muted small mb-0" style={{ fontSize: '0.75rem' }}>
+                  Transparent 20-100% compatibility scores based on skill complementarity.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="p-3 bg-light rounded-3 border text-center h-100">
+                <div className="mx-auto mb-2 p-2 bg-indigo-subtle rounded-circle d-inline-flex text-indigo" style={{ color: '#4F46E5', backgroundColor: '#EEF2FF' }}>
+                  <Video size={20} />
+                </div>
+                <h6 className="fw-bold text-dark small mb-1">2. Instant Video Calls</h6>
+                <p className="text-muted small mb-0" style={{ fontSize: '0.75rem' }}>
+                  Calendar scheduling with conflict prevention and Jitsi Meet links.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="p-3 bg-light rounded-3 border text-center h-100">
+                <div className="mx-auto mb-2 p-2 bg-success-subtle rounded-circle d-inline-flex text-success">
+                  <Star size={20} />
+                </div>
+                <h6 className="fw-bold text-dark small mb-1">3. Verified Reviews</h6>
+                <p className="text-muted small mb-0" style={{ fontSize: '0.75rem' }}>
+                  Only completed exchanges are eligible for reviews to guarantee trust.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Demo Callout Banner */}
+          <div className="p-3 rounded-3 border bg-primary text-white d-flex flex-wrap justify-content-between align-items-center gap-3">
+            <div>
+              <div className="fw-bold small">Ready to experience reciprocal peer learning?</div>
+              <div className="text-white-50 small" style={{ fontSize: '0.78rem' }}>Create your free account in under 2 minutes.</div>
+            </div>
+            <Link
+              to="/register"
+              onClick={() => setShowDemoModal(false)}
+              className="btn btn-sm btn-light fw-bold text-primary rounded-pill px-3"
+            >
+              Get Started Now
+            </Link>
+          </div>
+        </div>
+      </Modal>
 
       {/* 4. Popular Skill Categories */}
       <section className="py-5" style={{ backgroundColor: '#F8FAFC' }}>
