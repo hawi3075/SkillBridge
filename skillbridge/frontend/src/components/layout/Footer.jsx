@@ -1,40 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useToast } from '../../context/ToastContext';
 import {
   GraduationCap,
-  Sparkles,
   Github,
   Twitter,
   Linkedin,
-  Heart,
-  ArrowUp,
-  Send,
-  CheckCircle2,
-  ShieldCheck,
-  Zap,
-  Globe,
   MessageSquare,
-  BookOpen
+  ShieldCheck,
+  Heart,
+  ArrowUp
 } from 'lucide-react';
 
 export const Footer = () => {
-  const { showToast } = useToast();
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    if (!email || !email.includes('@')) {
-      showToast('Please enter a valid email address', 'error');
-      return;
-    }
-
-    setSubscribed(true);
-    showToast('Welcome to the SkillBridge community! 🚀 Weekly digest incoming.', 'success');
-    setEmail('');
-  };
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -42,91 +19,8 @@ export const Footer = () => {
   return (
     <footer className="modern-footer mt-auto pt-5 pb-4">
       <div className="container position-relative" style={{ zIndex: 1 }}>
-        {/* Pre-Footer Action / Newsletter Card */}
-        <div className="footer-newsletter-card p-4 p-md-5 mb-5 text-white">
-          <div className="row align-items-center g-4">
-            <div className="col-lg-7">
-              <div className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style={{ backgroundColor: 'rgba(255, 255, 255, 0.15)', fontSize: '0.8rem', fontWeight: 600 }}>
-                <Sparkles size={14} color="#FCD34D" />
-                <span>Join The Reciprocal Learning Movement</span>
-              </div>
-              <h3 className="fw-extrabold mb-2" style={{ letterSpacing: '-0.02em', fontSize: 'clamp(1.5rem, 3vw, 2.2rem)' }}>
-                Never Stop Learning. <br />Never Stop Teaching.
-              </h3>
-              <p className="mb-0 text-white-50" style={{ maxWidth: '500px', fontSize: '0.95rem', lineHeight: 1.6 }}>
-                Get our weekly curated digest of trending skills, high-compatibility match recommendations, and peer tutoring strategies.
-              </p>
-            </div>
-
-            <div className="col-lg-5">
-              {subscribed ? (
-                <div className="p-3 rounded-4 bg-white text-dark d-flex align-items-center gap-3 shadow-lg">
-                  <div className="rounded-circle p-2 bg-success text-white">
-                    <CheckCircle2 size={24} />
-                  </div>
-                  <div>
-                    <h6 className="fw-bold mb-0">You&apos;re on the list! 🎉</h6>
-                    <span className="small text-muted">Check your inbox for our curated starter guide.</span>
-                  </div>
-                </div>
-              ) : (
-                <form onSubmit={handleSubscribe} className="bg-white p-2 rounded-pill shadow-lg d-flex align-items-center">
-                  <input
-                    type="email"
-                    className="form-control border-0 shadow-none ps-3 text-dark"
-                    placeholder="Enter your email address..."
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    style={{ fontSize: '0.9rem', backgroundColor: 'transparent' }}
-                  />
-                  <button
-                    type="submit"
-                    className="btn btn-primary rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2 flex-shrink-0 fw-semibold"
-                    style={{ backgroundColor: '#1D4ED8', borderColor: '#1D4ED8', fontSize: '0.9rem' }}
-                  >
-                    <span>Subscribe</span>
-                    <Send size={14} />
-                  </button>
-                </form>
-              )}
-
-              <div className="d-flex flex-wrap gap-3 mt-3 text-white-50 small" style={{ fontSize: '0.75rem' }}>
-                <span className="d-inline-flex align-items-center gap-1">
-                  <ShieldCheck size={14} color="#34D399" /> 100% Free • No Spam
-                </span>
-                <span className="d-inline-flex align-items-center gap-1">
-                  <Zap size={14} color="#FCD34D" /> Unsubscribe anytime
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Live Metrics Ticker Bar */}
-        <div className="p-3 px-4 rounded-4 mb-5" style={{ backgroundColor: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-          <div className="row text-center g-3">
-            <div className="col-6 col-md-3 border-end border-secondary border-opacity-25">
-              <div className="fw-extrabold fs-5 text-white">15,000+</div>
-              <div className="text-secondary small" style={{ fontSize: '0.75rem' }}>Active Learners</div>
-            </div>
-            <div className="col-6 col-md-3 border-end border-secondary border-opacity-25">
-              <div className="fw-extrabold fs-5 text-primary">2,400+</div>
-              <div className="text-secondary small" style={{ fontSize: '0.75rem' }}>Completed Sessions</div>
-            </div>
-            <div className="col-6 col-md-3 border-end border-secondary border-opacity-25">
-              <div className="fw-extrabold fs-5 text-warning">4.9 / 5.0</div>
-              <div className="text-secondary small" style={{ fontSize: '0.75rem' }}>Average Rating</div>
-            </div>
-            <div className="col-6 col-md-3">
-              <div className="fw-extrabold fs-5 text-success">100% Free</div>
-              <div className="text-secondary small" style={{ fontSize: '0.75rem' }}>Direct Peer Exchange</div>
-            </div>
-          </div>
-        </div>
-
         {/* Main Footer Navigation Columns */}
-        <div className="row g-4 mb-5">
+        <div className="row g-4 mb-4">
           {/* Brand & Description */}
           <div className="col-lg-4 col-md-6">
             <Link to="/" className="d-flex align-items-center gap-2 text-decoration-none mb-3">
@@ -245,7 +139,7 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div
-          className="border-top pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-secondary small"
+          className="border-top pt-3 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-secondary small"
           style={{ borderColor: 'rgba(255, 255, 255, 0.08)' }}
         >
           <div style={{ color: '#94A3B8' }}>
