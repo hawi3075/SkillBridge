@@ -19,6 +19,8 @@ const getExchanges = async (req, res, next) => {
       include: {
         sender: { include: { profile: true } },
         receiver: { include: { profile: true } },
+        offeredSkill: true,
+        wantedSkill: true,
         sessions: true,
         reviews: true
       }
@@ -66,6 +68,8 @@ const getExchangeById = async (req, res, next) => {
       include: {
         sender: { include: { profile: true } },
         receiver: { include: { profile: true } },
+        offeredSkill: true,
+        wantedSkill: true,
         sessions: {
           include: {
             host: { include: { profile: true } },
@@ -138,7 +142,9 @@ const sendExchangeRequest = async (req, res, next) => {
       },
       include: {
         sender: { include: { profile: true } },
-        receiver: { include: { profile: true } }
+        receiver: { include: { profile: true } },
+        offeredSkill: true,
+        wantedSkill: true
       }
     });
 

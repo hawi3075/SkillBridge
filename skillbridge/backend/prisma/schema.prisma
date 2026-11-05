@@ -1,6 +1,7 @@
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 generator client {
@@ -132,6 +133,8 @@ model Skill {
   category    SkillCategory      @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   offeredBy   UserOfferedSkill[]
   wantedBy    UserWantedSkill[]
+  offeredInExchanges ExchangeRequest[] @relation("OfferedExchangeSkill")
+  wantedInExchanges  ExchangeRequest[] @relation("WantedExchangeSkill")
   createdAt   DateTime           @default(now())
   updatedAt   DateTime           @updatedAt
 
@@ -179,7 +182,9 @@ model ExchangeRequest {
   receiverId       String
   receiver         User              @relation("ReceivedRequests", fields: [receiverId], references: [id], onDelete: Cascade)
   offeredSkillId   String
+  offeredSkill     Skill             @relation("OfferedExchangeSkill", fields: [offeredSkillId], references: [id], onDelete: Cascade)
   wantedSkillId    String
+  wantedSkill      Skill             @relation("WantedExchangeSkill", fields: [wantedSkillId], references: [id], onDelete: Cascade)
   message          String
   status           ExchangeStatus    @default(PENDING)
   proposedSchedule String?
@@ -192,6 +197,8 @@ model ExchangeRequest {
 
   @@index([senderId])
   @@index([receiverId])
+  @@index([offeredSkillId])
+  @@index([wantedSkillId])
   @@index([status])
 }
 
