@@ -380,7 +380,7 @@ a:hover {
   border-bottom-left-radius: 2px;
 }
 
-/* Modern Dark Premium Footer */
+/* Modern Dark Premium Footer (Compact & Sleek) */
 .modern-footer {
   background-color: #0B132B;
   color: #E2E8F0;
@@ -394,36 +394,28 @@ a:hover {
   top: 0;
   left: 20%;
   width: 60%;
-  height: 250px;
-  background: radial-gradient(ellipse at top, rgba(37, 99, 235, 0.18) 0%, transparent 70%);
+  height: 180px;
+  background: radial-gradient(ellipse at top, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
   pointer-events: none;
-}
-
-.footer-newsletter-card {
-  background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(37, 99, 235, 0.85) 60%, rgba(99, 102, 241, 0.9) 100%);
-  border-radius: 24px;
-  box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  position: relative;
-  overflow: hidden;
 }
 
 .footer-link {
   color: #94A3B8;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
   transition: all 0.2s ease;
   display: inline-block;
 }
 
 .footer-link:hover {
   color: #FFFFFF;
-  transform: translateX(3px);
+  transform: translateX(2px);
 }
 
 .footer-social-btn {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.08);
   color: #94A3B8;
@@ -438,8 +430,8 @@ a:hover {
 .footer-social-btn:hover {
   background-color: #2563EB;
   color: #FFFFFF;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4);
 }
 
 @keyframes pulseGlow {
