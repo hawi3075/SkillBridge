@@ -11,13 +11,23 @@ const { successResponse, errorResponse } = require('../utils/response');
 const register = async (req, res, next) => {
   try {
     const { email, username, password, fullName, role, isMentor } = req.body;
+    const cleanEmail = (email || '').trim().toLowerCase();
+    const cleanUsername = (username || '').trim();
 
-    const existingEmail = await db.user.findUnique({ where: { email } });
+    if (!cleanEmail || !cleanUsername || !password) {
+      return errorResponse(res, 'Email, username, and password are required', 400);
+    }
+
+    const existingEmail = await db.user.findFirst({
+      where: { email: { equals: cleanEmail, mode: 'insensitive' } }
+    });
     if (existingEmail) {
       return errorResponse(res, 'An account with this email already exists', 409);
     }
 
-    const existingUsername = await db.user.findUnique({ where: { username } });
+    const existingUsername = await db.user.findFirst({
+      where: { username: { equals: cleanUsername, mode: 'insensitive' } }
+    });
     if (existingUsername) {
       return errorResponse(res, 'This username is already taken', 409);
     }
@@ -27,16 +37,16 @@ const register = async (req, res, next) => {
 
     const newUser = await db.user.create({
       data: {
-        email,
-        username,
+        email: cleanEmail,
+        username: cleanUsername,
         password: hashedPassword,
         role: assignedRole,
         isVerified: true,
         isActive: true,
         profile: {
           create: {
-            fullName: fullName || username,
-            avatarUrl: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(username)}`,
+            fullName: fullName || cleanUsername,
+            avatarUrl: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(cleanUsername)}`,
             bio: isMentor ? 'Passionate mentor eager to share skills and guide fellow learners.' : 'Skill enthusiast looking to trade knowledge and learn new abilities.',
             location: 'Remote / Global',
             languages: 'English',
@@ -78,11 +88,17 @@ const login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
+    if (!email || !password) {
+      return errorResponse(res, 'Email/username and password are required', 400);
+    }
+
+    const identifier = String(email).trim();
+
     const user = await db.user.findFirst({
       where: {
         OR: [
-          { email: { contains: email } },
-          { username: { contains: email } }
+          { email: { equals: identifier, mode: 'insensitive' } },
+          { username: { equals: identifier, mode: 'insensitive' } }
         ]
       },
       include: {
@@ -157,7 +173,15 @@ const getMe = async (req, res, next) => {
 const forgotPassword = async (req, res, next) => {
   try {
     const { email } = req.body;
-    const user = await db.user.findUnique({ where: { email } });
+    const identifier = (email || '').trim();
+    const user = await db.user.findFirst({
+      where: {
+        OR: [
+          { email: { equals: identifier, mode: 'insensitive' } },
+          { username: { equals: identifier, mode: 'insensitive' } }
+        ]
+      }
+    });
     if (!user) {
       // Return success even if not found to prevent user enumeration
       return successResponse(res, null, 'If that email exists, password reset instructions have been sent.');
