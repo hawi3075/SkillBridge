@@ -40,6 +40,7 @@ export const LoginPage = () => {
   const handleQuickFill = (quickEmail, quickPassword) => {
     setEmail(quickEmail);
     setPassword(quickPassword);
+    setError('');
   };
 
   return (
@@ -87,7 +88,8 @@ export const LoginPage = () => {
                 <input
                   type="text"
                   className="form-control border-start-0"
-                  placeholder="name@example.com"
+                  placeholder="name@example.com or username"
+                  autoComplete="username"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -110,6 +112,7 @@ export const LoginPage = () => {
                   type="password"
                   className="form-control border-start-0"
                   placeholder="••••••••"
+                  autoComplete="current-password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
