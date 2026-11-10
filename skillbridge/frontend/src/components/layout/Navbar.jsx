@@ -75,19 +75,7 @@ export const Navbar = () => {
       <div className="container py-1">
         {/* Brand Logo with Graduation Cap */}
         <Link to="/" className="navbar-brand d-flex align-items-center gap-2">
-          <div
-            style={{
-              width: '40px',
-              height: '40px',
-              background: 'linear-gradient(135deg, #1E40AF 0%, #2563EB 60%, #3B82F6 100%)',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#FFFFFF',
-              boxShadow: '0 4px 10px rgba(37, 99, 235, 0.25)'
-            }}
-          >
+          <div className="sb-brand-icon">
             <GraduationCap size={24} />
           </div>
           <span className="fw-bolder fs-4" style={{ letterSpacing: '-0.03em', color: '#0F172A' }}>

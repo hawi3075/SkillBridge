@@ -64,21 +64,24 @@ export const SessionsPage = () => {
         </div>
 
         {/* Filter Pills */}
-        <div className="btn-group btn-group-sm bg-white p-1 rounded-3 border">
+        <div className="d-flex flex-wrap gap-2">
           <button
-            className={`btn btn-sm ${filter === 'UPCOMING' ? 'btn-primary' : 'btn-light'}`}
+            type="button"
+            className={`sb-tab-pill ${filter === 'UPCOMING' ? 'active' : ''}`}
             onClick={() => setFilter('UPCOMING')}
           >
             Upcoming ({sessions.filter(s => ['SCHEDULED', 'IN_PROGRESS'].includes(s.status)).length})
           </button>
           <button
-            className={`btn btn-sm ${filter === 'COMPLETED' ? 'btn-primary' : 'btn-light'}`}
+            type="button"
+            className={`sb-tab-pill ${filter === 'COMPLETED' ? 'active' : ''}`}
             onClick={() => setFilter('COMPLETED')}
           >
             Completed ({sessions.filter(s => s.status === 'COMPLETED').length})
           </button>
           <button
-            className={`btn btn-sm ${filter === 'ALL' ? 'btn-primary' : 'btn-light'}`}
+            type="button"
+            className={`sb-tab-pill ${filter === 'ALL' ? 'active' : ''}`}
             onClick={() => setFilter('ALL')}
           >
             All Sessions ({sessions.length})

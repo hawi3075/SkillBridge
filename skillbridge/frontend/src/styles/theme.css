@@ -12,24 +12,63 @@
  */
 
 :root {
+  /* SkillBridge Core Brand Color Code */
   --primary: #2563EB;
   --primary-hover: #1D4ED8;
+  --primary-active: #1E40AF;
   --primary-light: #EFF6FF;
+  --primary-border: #BFDBFE;
+
+  /* Accent Indigo / Violet */
   --secondary: #6366F1;
   --secondary-hover: #4F46E5;
+  --secondary-active: #4338CA;
   --secondary-light: #EEF2FF;
+  --secondary-border: #C7D2FE;
+
+  /* Clean Surfaces & Slate Neutrals */
   --bg-main: #F8FAFC;
   --bg-surface: #FFFFFF;
+  --bg-subtle: #F1F5F9;
   --text-main: #0F172A;
+  --text-secondary: #334155;
   --text-muted: #64748B;
   --border-color: #E2E8F0;
   --border-light: #F1F5F9;
+  --border-hover: #CBD5E1;
+
+  /* Semantic Feedback & Statuses */
   --success: #10B981;
+  --success-light: #ECFDF5;
+  --success-text: #047857;
+  --success-border: #A7F3D0;
+
   --warning: #F59E0B;
+  --warning-light: #FEF3C7;
+  --warning-text: #B45309;
+  --warning-border: #FDE68A;
+
   --danger: #EF4444;
+  --danger-light: #FEF2F2;
+  --danger-text: #B91C1C;
+  --danger-border: #FECACA;
+
   --accent: #8B5CF6;
+  --accent-light: #F5F3FF;
+  --accent-text: #7C3AED;
+  --accent-border: #DDD6FE;
+
+  /* Brand Signature Gradients */
+  --gradient-brand: linear-gradient(135deg, #1E40AF 0%, #2563EB 55%, #6366F1 100%);
+  --gradient-brand-subtle: linear-gradient(135deg, #EFF6FF 0%, #EEF2FF 100%);
+  --gradient-dark: linear-gradient(180deg, #0A0F1D 0%, #070B14 100%);
+
+  /* Card & Interactive Elevation */
   --card-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05);
   --card-shadow-hover: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --button-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+
+  --radius-xs: 6px;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -121,6 +160,19 @@ a:hover {
   border-color: var(--secondary-hover);
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
   transform: translateY(-1px);
+}
+
+.btn-outline-indigo {
+  border-color: var(--secondary-border);
+  color: var(--secondary-hover);
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-indigo:hover {
+  background-color: var(--secondary-light);
+  color: var(--secondary-active);
+  border-color: var(--secondary);
 }
 
 /* Rounded Cards */
@@ -251,26 +303,131 @@ a:hover {
   margin: 0 auto 0.75rem;
 }
 
-/* Status Badges */
-.status-badge {
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.35rem 0.75rem;
-  border-radius: var(--radius-pill);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
+/* Form Controls Focus State */
+.form-control, .form-select {
+  border-color: var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.status-pending { background: #FEF3C7; color: #B45309; }
-.status-accepted { background: #E0E7FF; color: #4338CA; }
-.status-scheduled { background: #DBEAFE; color: #1E40AF; }
-.status-in_progress { background: #EDE9FE; color: #6D28D9; }
-.status-completed { background: #D1FAE5; color: #065F46; }
-.status-rejected { background: #FEE2E2; color: #991B1B; }
-.status-cancelled { background: #F1F5F9; color: #475569; }
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  outline: none;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.form-check-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  outline: none;
+}
+
+/* Unified Subtle Badge Styles */
+.badge.bg-primary-subtle {
+  background-color: var(--primary-light) !important;
+  color: var(--primary) !important;
+  border: 1px solid var(--primary-border) !important;
+}
+
+.badge.bg-indigo-subtle, .badge.bg-secondary-subtle {
+  background-color: var(--secondary-light) !important;
+  color: var(--secondary) !important;
+  border: 1px solid var(--secondary-border) !important;
+}
+
+.badge.bg-success-subtle {
+  background-color: var(--success-light) !important;
+  color: var(--success-text) !important;
+  border: 1px solid var(--success-border) !important;
+}
+
+.badge.bg-warning-subtle {
+  background-color: var(--warning-light) !important;
+  color: var(--warning-text) !important;
+  border: 1px solid var(--warning-border) !important;
+}
+
+.badge.bg-danger-subtle {
+  background-color: var(--danger-light) !important;
+  color: var(--danger-text) !important;
+  border: 1px solid var(--danger-border) !important;
+}
+
+/* Unified Brand Logo Icon Mark */
+.sb-brand-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-brand);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+  flex-shrink: 0;
+}
+
+.sb-brand-icon-sm {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+/* Unified Tab Pills across Platform */
+.sb-tab-pill {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.55rem 1rem;
+  border-radius: 10px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.sb-tab-pill:hover:not(.active) {
+  background: #F1F5F9;
+  color: var(--text-main);
+}
+
+.sb-tab-pill.active {
+  background: var(--primary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.28);
+}
+
+/* Status Badges */
+.status-badge {
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.32rem 0.75rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  letter-spacing: 0.02em;
+}
+
+.status-pending { background: #FEF3C7; color: #B45309; border: 1px solid #FDE68A; }
+.status-accepted { background: #EEF2FF; color: #4338CA; border: 1px solid #C7D2FE; }
+.status-scheduled { background: #EFF6FF; color: #1E40AF; border: 1px solid #BFDBFE; }
+.status-in_progress { background: #F5F3FF; color: #6D28D9; border: 1px solid #DDD6FE; }
+.status-completed { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
+.status-rejected { background: #FEF2F2; color: #B91C1C; border: 1px solid #FECACA; }
+.status-cancelled { background: #F1F5F9; color: #475569; border: 1px solid #E2E8F0; }
 
 /* Empty States */
 .empty-state {

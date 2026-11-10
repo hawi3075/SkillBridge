@@ -107,48 +107,43 @@ export const ExchangesPage = () => {
 
       {/* Tabs */}
       <div className="sb-card p-2 bg-white mb-4">
-        <ul className="nav nav-pills nav-fill">
-          <li className="nav-item">
-            <button
-              className={`nav-link small fw-semibold ${activeTab === 'ALL' ? 'active' : ''}`}
-              onClick={() => setActiveTab('ALL')}
-            >
-              All Exchanges ({exchanges.length})
-            </button>
-          </li>
-          <li className="nav-item">
-            <button
-              className={`nav-link small fw-semibold ${activeTab === 'PENDING' ? 'active' : ''}`}
-              onClick={() => setActiveTab('PENDING')}
-            >
-              Pending ({exchanges.filter(e => e.status === 'PENDING').length})
-            </button>
-          </li>
-          <li className="nav-item">
-            <button
-              className={`nav-link small fw-semibold ${activeTab === 'ACTIVE' ? 'active' : ''}`}
-              onClick={() => setActiveTab('ACTIVE')}
-            >
-              Active ({exchanges.filter(e => ['ACCEPTED', 'SCHEDULED', 'IN_PROGRESS'].includes(e.status)).length})
-            </button>
-          </li>
-          <li className="nav-item">
-            <button
-              className={`nav-link small fw-semibold ${activeTab === 'COMPLETED' ? 'active' : ''}`}
-              onClick={() => setActiveTab('COMPLETED')}
-            >
-              Completed ({exchanges.filter(e => e.status === 'COMPLETED').length})
-            </button>
-          </li>
-          <li className="nav-item">
-            <button
-              className={`nav-link small fw-semibold ${activeTab === 'CLOSED' ? 'active' : ''}`}
-              onClick={() => setActiveTab('CLOSED')}
-            >
-              Closed / Declined
-            </button>
-          </li>
-        </ul>
+        <div className="d-flex flex-wrap gap-2">
+          <button
+            type="button"
+            className={`sb-tab-pill ${activeTab === 'ALL' ? 'active' : ''}`}
+            onClick={() => setActiveTab('ALL')}
+          >
+            All Exchanges ({exchanges.length})
+          </button>
+          <button
+            type="button"
+            className={`sb-tab-pill ${activeTab === 'PENDING' ? 'active' : ''}`}
+            onClick={() => setActiveTab('PENDING')}
+          >
+            Pending ({exchanges.filter(e => e.status === 'PENDING').length})
+          </button>
+          <button
+            type="button"
+            className={`sb-tab-pill ${activeTab === 'ACTIVE' ? 'active' : ''}`}
+            onClick={() => setActiveTab('ACTIVE')}
+          >
+            Active ({exchanges.filter(e => ['ACCEPTED', 'SCHEDULED', 'IN_PROGRESS'].includes(e.status)).length})
+          </button>
+          <button
+            type="button"
+            className={`sb-tab-pill ${activeTab === 'COMPLETED' ? 'active' : ''}`}
+            onClick={() => setActiveTab('COMPLETED')}
+          >
+            Completed ({exchanges.filter(e => e.status === 'COMPLETED').length})
+          </button>
+          <button
+            type="button"
+            className={`sb-tab-pill ${activeTab === 'CLOSED' ? 'active' : ''}`}
+            onClick={() => setActiveTab('CLOSED')}
+          >
+            Closed / Declined
+          </button>
+        </div>
       </div>
 
       {/* Exchange Cards List */}

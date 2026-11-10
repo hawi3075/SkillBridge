@@ -45,7 +45,7 @@ export const UserLayout = () => {
                   <span className="text-muted small" style={{ fontSize: '0.75rem' }}>@{user?.username}</span>
                   {isAdminView && (
                     <div className="mt-1">
-                      <span className="badge bg-danger-subtle text-danger border border-danger-subtle" style={{ fontSize: '0.68rem', padding: '2px 6px' }}>
+                      <span className="badge border" style={{ fontSize: '0.68rem', padding: '2px 8px', backgroundColor: '#F5F3FF', color: '#7C3AED', borderColor: '#DDD6FE' }}>
                         ADMINISTRATOR
                       </span>
                     </div>
@@ -103,7 +103,7 @@ export const UserLayout = () => {
                     </NavLink>
 
                     <NavLink to="/dashboard/matches" className={({ isActive }) => `sidebar-nav-item ${isActive ? 'active' : ''}`}>
-                      <Sparkles size={18} color="#2563EB" />
+                      <Sparkles size={18} />
                       <span>Smart Matches</span>
                     </NavLink>
 

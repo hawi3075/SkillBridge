@@ -22,19 +22,7 @@ export const Footer = () => {
           {/* Brand & Slogan */}
           <div className="d-flex align-items-center gap-2">
             <Link to="/" className="d-flex align-items-center gap-2 text-decoration-none">
-              <div
-                style={{
-                  width: '28px',
-                  height: '28px',
-                  background: 'linear-gradient(135deg, #1E40AF 0%, #2563EB 60%, #3B82F6 100%)',
-                  borderRadius: '7px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#FFFFFF',
-                  boxShadow: '0 2px 8px rgba(37, 99, 235, 0.35)'
-                }}
-              >
+              <div className="sb-brand-icon sb-brand-icon-sm">
                 <GraduationCap size={16} />
               </div>
               <span className="fw-bold fs-5 text-white" style={{ letterSpacing: '-0.02em' }}>

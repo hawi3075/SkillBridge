@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../context/ToastContext';
-import { Sparkles, Mail, Lock, LogIn, AlertCircle } from 'lucide-react';
+import { GraduationCap, Mail, Lock, LogIn, AlertCircle } from 'lucide-react';
 
 export const LoginPage = () => {
   const { login } = useAuth();
@@ -48,19 +48,8 @@ export const LoginPage = () => {
       <div className="container" style={{ maxWidth: '440px' }}>
         <div className="text-center mb-4">
           <Link to="/" className="d-inline-flex align-items-center gap-2 text-decoration-none mb-3">
-            <div
-              style={{
-                width: '40px',
-                height: '40px',
-                background: 'linear-gradient(135deg, #2563EB 0%, #6366F1 100%)',
-                borderRadius: '10px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#FFFFFF'
-              }}
-            >
-              <Sparkles size={20} />
+            <div className="sb-brand-icon">
+              <GraduationCap size={22} />
             </div>
             <span className="fw-bolder fs-4 text-dark" style={{ letterSpacing: '-0.03em' }}>
               Skill<span style={{ color: '#2563EB' }}>Bridge</span>
@@ -156,7 +145,7 @@ export const LoginPage = () => {
                 type="button"
                 onClick={() => handleQuickFill('elena.design@example.com', 'Password123!')}
                 className="btn btn-xs btn-outline-indigo border small py-1 px-2"
-                style={{ fontSize: '0.75rem', borderColor: '#C7D2FE', color: '#4F46E5' }}
+                style={{ fontSize: '0.75rem' }}
               >
                 🎨 Elena (Design)
               </button>

@@ -63,7 +63,7 @@ export const MatchCard = ({ match, onProposeExchange }) => {
               <span className="small text-muted fw-semibold" style={{ fontSize: '0.75rem' }}>
                 YOU TEACH THEM
               </span>
-              <span className="badge bg-indigo-subtle text-indigo fw-bold" style={{ fontSize: '0.8rem', backgroundColor: '#EEF2FF', color: '#4F46E5' }}>
+              <span className="badge bg-indigo-subtle fw-bold" style={{ fontSize: '0.8rem' }}>
                 {match.matchedOfferedSkill ? match.matchedOfferedSkill.name : 'Your Skills'}
               </span>
             </div>

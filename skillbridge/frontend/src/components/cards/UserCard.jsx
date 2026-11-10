@@ -102,8 +102,8 @@ export const UserCard = ({ user, onRequestExchange = null }) => {
           {wanted.slice(0, 3).map((ws, idx) => (
             <span
               key={idx}
-              className="badge bg-indigo-subtle text-indigo border"
-              style={{ fontSize: '0.75rem', fontWeight: 500, backgroundColor: '#EEF2FF', color: '#4F46E5', borderColor: '#C7D2FE' }}
+              className="badge bg-indigo-subtle"
+              style={{ fontSize: '0.75rem', fontWeight: 500 }}
             >
               {ws.skill?.name || 'Skill'}
             </span>

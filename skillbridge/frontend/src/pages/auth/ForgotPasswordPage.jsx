@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { authApi } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
-import { Sparkles, Mail, ArrowLeft, KeyRound, CheckCircle2 } from 'lucide-react';
+import { GraduationCap, Mail, ArrowLeft, KeyRound, CheckCircle2 } from 'lucide-react';
 
 export const ForgotPasswordPage = () => {
   const { showToast } = useToast();
@@ -31,19 +31,8 @@ export const ForgotPasswordPage = () => {
       <div className="container" style={{ maxWidth: '440px' }}>
         <div className="text-center mb-4">
           <Link to="/" className="d-inline-flex align-items-center gap-2 text-decoration-none mb-3">
-            <div
-              style={{
-                width: '40px',
-                height: '40px',
-                background: 'linear-gradient(135deg, #2563EB 0%, #6366F1 100%)',
-                borderRadius: '10px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#FFFFFF'
-              }}
-            >
-              <Sparkles size={20} />
+            <div className="sb-brand-icon">
+              <GraduationCap size={22} />
             </div>
             <span className="fw-bolder fs-4 text-dark" style={{ letterSpacing: '-0.03em' }}>
               Skill<span style={{ color: '#2563EB' }}>Bridge</span>

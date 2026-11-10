@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../context/ToastContext';
-import { Sparkles, Mail, Lock, User, UserPlus, AlertCircle, CheckCircle } from 'lucide-react';
+import { GraduationCap, Mail, Lock, User, UserPlus, AlertCircle, CheckCircle } from 'lucide-react';
 
 export const RegisterPage = () => {
   const { register } = useAuth();
@@ -46,19 +46,8 @@ export const RegisterPage = () => {
       <div className="container" style={{ maxWidth: '480px' }}>
         <div className="text-center mb-4">
           <Link to="/" className="d-inline-flex align-items-center gap-2 text-decoration-none mb-3">
-            <div
-              style={{
-                width: '40px',
-                height: '40px',
-                background: 'linear-gradient(135deg, #2563EB 0%, #6366F1 100%)',
-                borderRadius: '10px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#FFFFFF'
-              }}
-            >
-              <Sparkles size={20} />
+            <div className="sb-brand-icon">
+              <GraduationCap size={22} />
             </div>
             <span className="fw-bolder fs-4 text-dark" style={{ letterSpacing: '-0.03em' }}>
               Skill<span style={{ color: '#2563EB' }}>Bridge</span>
