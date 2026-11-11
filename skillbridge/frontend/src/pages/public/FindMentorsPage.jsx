@@ -95,6 +95,27 @@ export const FindMentorsPage = () => {
           </p>
         </div>
 
+        {/* Category Pills Bar */}
+        <div className="d-flex flex-wrap gap-2 justify-content-center mb-4">
+          <button
+            type="button"
+            onClick={() => updateParam('category', '')}
+            className={`sb-tab-pill ${!selectedCategory ? 'active' : ''}`}
+          >
+            <span>All Mentors</span>
+          </button>
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              type="button"
+              onClick={() => updateParam('category', cat.id)}
+              className={`sb-tab-pill ${selectedCategory === cat.id ? 'active' : ''}`}
+            >
+              <span>{cat.name}</span>
+            </button>
+          ))}
+        </div>
+
         {/* Filter Bar */}
         <div className="sb-card p-4 mb-4 bg-white">
           <form onSubmit={handleSearchSubmit} className="row g-3">

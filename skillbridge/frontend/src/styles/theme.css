@@ -711,7 +711,30 @@ a:hover {
 .admin-kpi-card.kpi-blue::before { background-color: #2563EB; }
 .admin-kpi-card.kpi-indigo::before { background-color: #6366F1; }
 .admin-kpi-card.kpi-emerald::before { background-color: #10B981; }
+.admin-kpi-card.kpi-amber::before { background-color: #F59E0B; }
 .admin-kpi-card.kpi-rose::before { background-color: #F43F5E; }
+
+/* Dashboard Welcome Banner */
+.dashboard-welcome-banner {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 60%, #EFF6FF 100%);
+  border-radius: 18px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-welcome-banner::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
 
 .admin-kpi-icon {
   width: 44px;

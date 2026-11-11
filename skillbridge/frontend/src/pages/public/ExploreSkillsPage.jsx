@@ -91,6 +91,30 @@ export const ExploreSkillsPage = () => {
           </p>
         </div>
 
+        {/* Category Pills Bar */}
+        <div className="d-flex flex-wrap gap-2 justify-content-center mb-4">
+          <button
+            type="button"
+            onClick={() => handleCategoryChange('')}
+            className={`sb-tab-pill ${!selectedCategory ? 'active' : ''}`}
+          >
+            <span>All Categories</span>
+            <span className="badge rounded-pill bg-light text-dark ms-1" style={{ fontSize: '0.68rem' }}>
+              {categories.reduce((acc, c) => acc + (c.skills?.length || 0), 0) || skills.length}
+            </span>
+          </button>
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              type="button"
+              onClick={() => handleCategoryChange(cat.id)}
+              className={`sb-tab-pill ${selectedCategory === cat.id ? 'active' : ''}`}
+            >
+              <span>{cat.name}</span>
+            </button>
+          ))}
+        </div>
+
         {/* Filter & Search Bar */}
         <div className="sb-card p-4 mb-4 bg-white">
           <form onSubmit={handleSearchSubmit} className="row g-3">
