@@ -5,7 +5,7 @@ const { authenticate, requireRole } = require('../middleware/auth');
 
 router.use(authenticate);
 
-// Allow users to submit reports
+
 router.post('/reports', adminController.createReport);
 
 
