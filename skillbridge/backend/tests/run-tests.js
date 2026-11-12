@@ -159,7 +159,7 @@ async function runTests() {
     const start1 = new Date('2026-11-20T14:00:00Z');
     const end1 = new Date('2026-11-20T15:00:00Z');
 
-    // Overlapping session (starts at 14:30)
+    
     const start2 = new Date('2026-11-20T14:30:00Z');
     const end2 = new Date('2026-11-20T15:30:00Z');
 
