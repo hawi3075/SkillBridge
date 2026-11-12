@@ -109,7 +109,7 @@ async function runTests() {
     assert.strictEqual(admin.role, 'ADMIN', 'Admin user must have ADMIN role');
   });
 
-  // Test 6: Exchange Request Workflow & Transitions
+  
   await test('Exchange Request Lifecycle State Transitions', async () => {
     const newEx = await db.exchangeRequest.create({
       data: {
