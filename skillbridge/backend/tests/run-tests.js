@@ -69,7 +69,7 @@ async function runTests() {
     assert.strictEqual(match.matchedWantedSkill.name, 'Figma UI/UX');
   });
 
-  // Test 4: Smart Matching Algorithm - Non-Matching Users
+  
   await test('Smart Matching Algorithm - Low Complementarity', async () => {
     const userA = {
       id: 'user-a',
