@@ -23,7 +23,6 @@ async function runTests() {
     }
   };
 
-  // Test 1: Password Hashing & Verification
   await test('Password Hashing and Comparison', async () => {
     const rawPass = 'SecretPassword123!';
     const hashed = await hashPassword(rawPass);
