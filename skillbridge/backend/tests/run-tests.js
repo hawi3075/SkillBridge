@@ -143,7 +143,7 @@ async function runTests() {
     const exchange = await db.exchangeRequest.findUnique({
       where: { id: 'exch-1' }
     });
-    
+
     assert(exchange !== null, 'Seeded completed exchange exch-1 must exist');
     assert.strictEqual(exchange.status, 'COMPLETED', 'Exchange exch-1 must be COMPLETED');
 
@@ -154,7 +154,7 @@ async function runTests() {
     assert(reviews[0].rating >= 1 && reviews[0].rating <= 5, 'Rating must be 1 to 5');
   });
 
-  // Test 8: Session Conflict Detection Logic
+  
   await test('Calendar Conflict Prevention Logic', async () => {
     const start1 = new Date('2026-11-20T14:00:00Z');
     const end1 = new Date('2026-11-20T15:00:00Z');
