@@ -1,6 +1,4 @@
-/**
- * SkillBridge Automated Test Suite
- */
+
 
 const assert = require('assert');
 const { calculateMatchScore } = require('../src/services/matchingService');
