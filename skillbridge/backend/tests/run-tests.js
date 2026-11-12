@@ -143,6 +143,7 @@ async function runTests() {
     const exchange = await db.exchangeRequest.findUnique({
       where: { id: 'exch-1' }
     });
+    
     assert(exchange !== null, 'Seeded completed exchange exch-1 must exist');
     assert.strictEqual(exchange.status, 'COMPLETED', 'Exchange exch-1 must be COMPLETED');
 
