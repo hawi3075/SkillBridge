@@ -33,7 +33,7 @@ async function runTests() {
     assert.strictEqual(isWrong, false, 'Comparing wrong password must return false');
   });
 
-  // Test 2: JWT Token Generation & Verification
+  
   await test('JWT Token Generation and Verification', async () => {
     const payload = { userId: 'usr-test-123', email: 'test@skillbridge.io', role: 'MENTOR' };
     const token = generateToken(payload);
