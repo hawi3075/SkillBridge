@@ -44,7 +44,7 @@ async function runTests() {
     assert.strictEqual(decoded.role, 'MENTOR', 'Decoded role must match original payload');
   });
 
-  // Test 3: Smart Matching Algorithm - Mutual Match
+ 
   await test('Smart Matching Algorithm - Strong Mutual Match', async () => {
     const userA = {
       id: 'user-a',
