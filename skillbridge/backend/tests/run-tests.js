@@ -138,7 +138,7 @@ async function runTests() {
     assert.strictEqual(completed.status, 'COMPLETED', 'Status should transition to COMPLETED');
   });
 
-  // Test 7: Review Eligibility Check & Duplicate Prevention
+
   await test('Review Submission Rules & Uniqueness', async () => {
     const exchange = await db.exchangeRequest.findUnique({
       where: { id: 'exch-1' }
