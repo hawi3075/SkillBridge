@@ -8,7 +8,7 @@ router.use(authenticate);
 // Allow users to submit reports
 router.post('/reports', adminController.createReport);
 
-// All subsequent routes require ADMIN role
+
 router.use(requireRole('ADMIN'));
 
 router.get('/dashboard', adminController.getAdminDashboardStats);
