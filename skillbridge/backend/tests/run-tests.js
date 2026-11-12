@@ -166,7 +166,7 @@ async function runTests() {
     const hasOverlap = start2 < end1 && end2 > start1;
     assert.strictEqual(hasOverlap, true, 'Overlapping times must trigger conflict detection');
 
-    // Non-overlapping session (starts at 15:30)
+    
     const start3 = new Date('2026-11-20T15:30:00Z');
     const end3 = new Date('2026-11-20T16:30:00Z');
     const noOverlap = start3 < end1 && end3 > start1;
