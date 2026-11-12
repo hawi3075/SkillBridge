@@ -90,7 +90,7 @@ async function runTests() {
     assert(match.matchPercentage < 60, `Score should be low for unrelated skills (got ${match.matchPercentage})`);
   });
 
-  // Test 5: Database Querying & Seeding Verification
+  
   await test('Database Models & Initial Seed Data Verification', async () => {
     const categories = await db.skillCategory.findMany();
     assert(categories.length >= 8, `Expected at least 8 categories, got ${categories.length}`);
