@@ -153,7 +153,7 @@ export const ExchangeCard = ({
           </>
         )}
 
-        {/* Completed Actions */}
+        
         {exchange.status === 'COMPLETED' && (
           <button
             onClick={() => onOpenReviewModal(exchange)}
