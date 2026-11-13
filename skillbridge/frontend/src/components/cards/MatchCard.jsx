@@ -12,7 +12,7 @@ export const MatchCard = ({ match, onProposeExchange }) => {
   return (
     <div className="sb-card p-4 mb-4">
       <div className="row align-items-center g-4">
-        {/* Candidate Profile Column */}
+        
         <div className="col-lg-5">
           <div className="d-flex align-items-center gap-3">
             <img
