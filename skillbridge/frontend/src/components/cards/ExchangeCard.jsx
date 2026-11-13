@@ -101,7 +101,7 @@ export const ExchangeCard = ({
 
     
       <div className="d-flex flex-wrap justify-content-end align-items-center gap-2 pt-2 border-top">
-        {/* Recipient Pending actions */}
+        
         {!isSender && exchange.status === 'PENDING' && (
           <>
             <button
