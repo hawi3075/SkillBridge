@@ -129,7 +129,7 @@ export const ExchangeCard = ({
           </button>
         )}
 
-        {/* Accepted or Scheduled Actions */}
+        
         {['ACCEPTED', 'SCHEDULED', 'IN_PROGRESS'].includes(exchange.status) && (
           <>
             <Link
