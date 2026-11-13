@@ -66,7 +66,7 @@ export const ExchangeCard = ({
         </div>
       </div>
 
-      {/* Skills Traded */}
+      
       <div className="row g-3 mb-3 bg-light p-3 rounded-3 border">
         <div className="col-md-6">
           <span className="text-muted small fw-semibold d-block" style={{ fontSize: '0.75rem' }}>
