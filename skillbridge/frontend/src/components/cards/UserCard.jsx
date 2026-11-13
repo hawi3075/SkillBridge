@@ -48,7 +48,7 @@ export const UserCard = ({ user, onRequestExchange = null }) => {
         </div>
       </div>
 
-      {/* Location & Languages */}
+     
       <div className="d-flex flex-wrap gap-2 text-muted small mb-3" style={{ fontSize: '0.8rem' }}>
         {profile.location && (
           <span className="d-inline-flex align-items-center gap-1">
