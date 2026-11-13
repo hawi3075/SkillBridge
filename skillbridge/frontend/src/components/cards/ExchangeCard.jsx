@@ -86,7 +86,7 @@ export const ExchangeCard = ({
         </div>
       </div>
 
-      {/* Proposal Message */}
+     
       <div className="mb-3">
         <p className="text-dark small mb-1" style={{ lineHeight: 1.5 }}>
           "{exchange.message}"
