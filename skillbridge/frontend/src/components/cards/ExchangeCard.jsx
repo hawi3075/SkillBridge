@@ -119,7 +119,7 @@ export const ExchangeCard = ({
           </>
         )}
 
-        {/* Sender Pending actions */}
+        
         {isSender && exchange.status === 'PENDING' && (
           <button
             onClick={() => onCancel(exchange.id)}
