@@ -91,14 +91,15 @@ export const ExchangeCard = ({
         <p className="text-dark small mb-1" style={{ lineHeight: 1.5 }}>
           "{exchange.message}"
         </p>
-        {exchange.proposedSchedule && (
+        {exchange.proposedSchedule 
+        && (
           <div className="text-muted small d-flex align-items-center gap-1">
             <Clock size={13} /> Proposed Time: {exchange.proposedSchedule}
           </div>
         )}
       </div>
 
-      {/* Action Buttons */}
+    
       <div className="d-flex flex-wrap justify-content-end align-items-center gap-2 pt-2 border-top">
         {/* Recipient Pending actions */}
         {!isSender && exchange.status === 'PENDING' && (
