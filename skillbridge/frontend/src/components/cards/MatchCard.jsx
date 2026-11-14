@@ -43,7 +43,7 @@ export const MatchCard = ({ match, onProposeExchange }) => {
           </div>
         </div>
 
-        {/* Skill Exchange Dynamic Mapping */}
+        
         <div className="col-lg-4">
           <div className="p-3 bg-light rounded-3 border">
             <div className="d-flex align-items-center justify-content-between mb-2">
