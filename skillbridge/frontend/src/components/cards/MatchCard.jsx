@@ -105,7 +105,7 @@ export const MatchCard = ({ match, onProposeExchange }) => {
         </div>
       </div>
 
-      {/* Transparent Match Score Logic Accordion */}
+      
       {showBreakdown && (
         <div className="mt-3 pt-3 border-top bg-white p-3 rounded border">
           <h6 className="fw-bold small text-dark mb-2">Transparent Match Scoring Breakdown:</h6>
