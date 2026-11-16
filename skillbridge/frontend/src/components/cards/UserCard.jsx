@@ -10,7 +10,7 @@ export const UserCard = ({ user, onRequestExchange = null }) => {
 
   return (
     <div className="sb-card sb-card-hover h-100 p-4 d-flex flex-column">
-      {/* Top Header */}
+      
       <div className="d-flex align-items-start gap-3 mb-3">
         <div className="position-relative">
           <img
