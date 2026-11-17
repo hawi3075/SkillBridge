@@ -67,7 +67,7 @@ export const UserCard = ({ user, onRequestExchange = null }) => {
         {profile.bio ? (profile.bio.length > 110 ? `${profile.bio.substring(0, 107)}...` : profile.bio) : 'Open to trading skills and mutual learning sessions.'}
       </p>
 
-      {/* Skills Offered (Can Teach) */}
+      
       <div className="mb-2">
         <span className="text-dark fw-semibold small d-block mb-1" style={{ fontSize: '0.78rem' }}>
           CAN TEACH:
