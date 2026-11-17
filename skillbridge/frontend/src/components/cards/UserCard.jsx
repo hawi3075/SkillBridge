@@ -93,7 +93,7 @@ export const UserCard = ({ user, onRequestExchange = null }) => {
         </div>
       </div>
 
-      {/* Skills Wanted (Wants to Learn) */}
+      
       <div className="mb-4">
         <span className="text-dark fw-semibold small d-block mb-1" style={{ fontSize: '0.78rem' }}>
           WANTS TO LEARN:
