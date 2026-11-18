@@ -116,7 +116,7 @@ export const UserCard = ({ user, onRequestExchange = null }) => {
         </div>
       </div>
 
-      {/* Action Footer */}
+      
       <div className="d-flex gap-2 pt-2 border-top mt-auto">
         <Link to={`/users/${user.id}`} className="btn btn-sm btn-outline-primary flex-grow-1">
           View Profile
