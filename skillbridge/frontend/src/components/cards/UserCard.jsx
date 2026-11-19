@@ -62,7 +62,7 @@ export const UserCard = ({ user, onRequestExchange = null }) => {
         )}
       </div>
 
-      {/* Bio snippet */}
+
       <p className="text-muted small mb-3 flex-grow-1" style={{ fontSize: '0.85rem', lineHeight: 1.5 }}>
         {profile.bio ? (profile.bio.length > 110 ? `${profile.bio.substring(0, 107)}...` : profile.bio) : 'Open to trading skills and mutual learning sessions.'}
       </p>
