@@ -249,7 +249,7 @@ export const AdminDashboardPage = () => {
             </div>
           </div>
 
-          {/* Quick System Status & Actions */}
+         
           <div className="d-flex flex-wrap align-items-center gap-2">
             <div className="admin-system-chip">
               <span className="pulse-dot"></span>
