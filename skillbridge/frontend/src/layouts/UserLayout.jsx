@@ -156,7 +156,7 @@ export const UserLayout = () => {
             </div>
           </div>
 
-          {/* Main Dashboard Content Outlet */}
+          
           <div className={isAdminView ? 'col-lg-9 col-xl-10' : 'col-lg-9'}>
             <Outlet />
           </div>
