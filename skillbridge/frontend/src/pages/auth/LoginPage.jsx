@@ -99,14 +99,24 @@ export const LoginPage = () => {
                   <Lock size={16} />
                 </span>
                 <input
-                  type="password"
-                  className="form-control border-start-0"
+                  type={showPassword ? 'text' : 'password'}
+                  className="form-control border-start-0 border-end-0"
                   placeholder="••••••••"
                   autoComplete="current-password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <button
+                  type="button"
+                  className="input-group-text bg-white border-start-0 text-muted"
+                  onClick={() => setShowPassword(v => !v)}
+                  tabIndex={-1}
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                  style={{ cursor: 'pointer' }}
+                >
+                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                </button>
               </div>
             </div>
 
