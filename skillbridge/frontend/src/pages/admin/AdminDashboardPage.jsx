@@ -274,7 +274,7 @@ export const AdminDashboardPage = () => {
         </div>
       </div>
 
-      {/* 2. Executive KPI Cards */}
+     
       <div className="row g-3 mb-4">
         {/* Total Users */}
         <div className="col-sm-6 col-lg-3">
