@@ -174,7 +174,7 @@ export const AdminDashboardPage = () => {
         setIsSkillModalOpen(false);
         setNewSkillName('');
         setNewSkillDesc('');
-        // Refresh categories to update skills count
+        
         const catsRes = await skillApi.getCategories();
         if (catsRes.success) setCategories(catsRes.data || []);
       }
