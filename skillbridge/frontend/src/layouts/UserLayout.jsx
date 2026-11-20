@@ -53,7 +53,7 @@ export const UserLayout = () => {
                 </div>
               </div>
 
-              {/* Navigation Links */}
+             
               <nav className="d-flex flex-column gap-1">
                 {isAdminView ? (
                   // Dedicated Admin Navigation
