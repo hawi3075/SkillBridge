@@ -95,7 +95,7 @@ export const UserLayout = () => {
                     </div>
                   </>
                 ) : (
-                  // Standard Learner Navigation
+                 
                   <>
                     <NavLink to="/dashboard" end className={({ isActive }) => `sidebar-nav-item ${isActive ? 'active' : ''}`}>
                       <LayoutDashboard size={18} />
