@@ -85,7 +85,7 @@ export const UserLayout = () => {
                       </Link>
                     </div>
 
-                    {/* System Status Mini Widget */}
+                    
                     <div className="mt-3 p-2.5 rounded-3 bg-light border" style={{ fontSize: '0.72rem' }}>
                       <div className="d-flex align-items-center gap-1.5 text-success fw-bold mb-1">
                         <span className="pulse-dot" style={{ width: '6px', height: '6px' }}></span>
