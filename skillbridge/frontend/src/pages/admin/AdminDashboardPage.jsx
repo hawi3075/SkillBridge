@@ -301,7 +301,7 @@ export const AdminDashboardPage = () => {
           </div>
         </div>
 
-        {/* Verified Mentors */}
+       
         <div className="col-sm-6 col-lg-3">
           <div className="admin-kpi-card kpi-indigo">
             <div className="d-flex align-items-center justify-content-between mb-2">
