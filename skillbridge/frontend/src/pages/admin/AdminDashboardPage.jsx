@@ -215,7 +215,7 @@ export const AdminDashboardPage = () => {
 
   return (
     <div className="py-2">
-      {/* 1. Mission Control Executive Header */}
+     
       <div className="admin-card p-4 p-md-4 mb-4">
         <div className="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
           <div className="d-flex align-items-center gap-3">
