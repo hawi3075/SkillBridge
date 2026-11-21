@@ -384,7 +384,7 @@ export const AdminDashboardPage = () => {
         </div>
       </div>
 
-      {/* 3. Floating Segmented Navigation Bar */}
+      
       <div className="admin-card p-1.5 mb-4 d-inline-flex flex-wrap gap-1 bg-white border">
         <button
           className={`admin-nav-pill ${activeTab === 'ANALYTICS' ? 'active' : ''}`}
