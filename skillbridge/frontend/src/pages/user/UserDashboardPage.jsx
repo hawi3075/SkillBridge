@@ -7,7 +7,6 @@ import ProposeExchangeModal from '../../components/forms/ProposeExchangeModal';
 import LoadingSkeleton from '../../components/common/LoadingSkeleton';
 import EmptyState from '../../components/common/EmptyState';
 import {
-  Sparkles,
   ArrowRightLeft,
   Calendar,
   BookOpen,

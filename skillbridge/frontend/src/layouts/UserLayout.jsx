@@ -103,7 +103,7 @@ export const UserLayout = () => {
                     </NavLink>
 
                     <NavLink to="/dashboard/matches" className={({ isActive }) => `sidebar-nav-item ${isActive ? 'active' : ''}`}>
-                      <Sparkles size={18} />
+                      <Users2 size={18} />
                       <span>Smart Matches</span>
                     </NavLink>
 
