@@ -484,7 +484,7 @@ export const AdminDashboardPage = () => {
                 </ResponsiveContainer>
               </div>
 
-              {/* Bottom Insight Strip */}
+              
               <div className="row g-2 pt-3 mt-2 border-top text-center text-secondary small">
                 <div className="col-4 border-end">
                   <div className="fw-bold text-dark">100% Free</div>

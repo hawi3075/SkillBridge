@@ -3,7 +3,7 @@ import { NavLink, Outlet, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import {
   LayoutDashboard,
-  Sparkles,
+  Users2,
   ArrowRightLeft,
   Calendar,
   MessageSquare,
