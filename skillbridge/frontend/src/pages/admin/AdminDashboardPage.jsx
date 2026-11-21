@@ -430,7 +430,7 @@ export const AdminDashboardPage = () => {
         </button>
       </div>
 
-      {/* 4. Tab 1: Analytics & Charts */}
+      
       {activeTab === 'ANALYTICS' && (
         <div className="row g-4">
           {/* Growth Area Chart */}

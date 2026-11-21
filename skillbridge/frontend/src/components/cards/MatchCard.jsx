@@ -75,7 +75,6 @@ export const MatchCard = ({ match, onProposeExchange }) => {
           <div className="d-flex flex-column align-items-lg-end gap-2">
             <div className="d-inline-flex align-items-center gap-2">
               <span className={`match-score-pill ${score >= 90 ? 'match-score-high' : ''}`}>
-                <Sparkles size={16} />
                 {score}% Match
               </span>
               {match.isMutualMatch && (
