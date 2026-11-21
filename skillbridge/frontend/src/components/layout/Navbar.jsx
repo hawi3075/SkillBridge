@@ -117,7 +117,7 @@ export const Navbar = () => {
               {isAuthenticated ? (
                 <>
                   <Link to="/dashboard/matches" className="btn btn-sm btn-outline-primary d-none d-md-inline-flex align-items-center gap-1">
-                    <Sparkles size={16} /><span>Matches</span>
+                    <Users size={16} /><span>Matches</span>
                   </Link>
                   <Link to="/dashboard/messages" className="btn btn-light rounded-circle p-2 text-dark" title="Messages">
                     <MessageSquare size={18} />
@@ -181,7 +181,7 @@ export const Navbar = () => {
                           <span className="badge bg-primary-subtle text-primary mt-1" style={{ fontSize: '0.7rem' }}>{user?.role}</span>
                         </div>
                         <Link to="/dashboard"           onClick={() => setShowUserMenu(false)} className="dropdown-item py-2 px-3 rounded d-flex align-items-center gap-2 small"><User size={16} /> Dashboard</Link>
-                        <Link to="/dashboard/exchanges" onClick={() => setShowUserMenu(false)} className="dropdown-item py-2 px-3 rounded d-flex align-items-center gap-2 small"><Sparkles size={16} /> Skill Exchanges</Link>
+                        <Link to="/dashboard/exchanges" onClick={() => setShowUserMenu(false)} className="dropdown-item py-2 px-3 rounded d-flex align-items-center gap-2 small"><ArrowRightLeft size={16} /> Skill Exchanges</Link>
                         <Link to="/dashboard/sessions"  onClick={() => setShowUserMenu(false)} className="dropdown-item py-2 px-3 rounded d-flex align-items-center gap-2 small"><Calendar size={16} /> Sessions</Link>
                         {isMentor && <Link to="/mentor/dashboard" onClick={() => setShowUserMenu(false)} className="dropdown-item py-2 px-3 rounded d-flex align-items-center gap-2 small text-primary fw-semibold"><GraduationCap size={16} /> Mentor Portal</Link>}
                         {isAdmin  && <Link to="/admin/dashboard"  onClick={() => setShowUserMenu(false)} className="dropdown-item py-2 px-3 rounded d-flex align-items-center gap-2 small text-danger fw-semibold"><ShieldAlert size={16} /> Admin Panel</Link>}
