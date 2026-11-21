@@ -133,7 +133,7 @@ export const UserDashboardPage = () => {
                 className="btn btn-primary rounded-pill px-3 py-2 d-inline-flex align-items-center gap-2 shadow-sm"
                 style={{ fontWeight: 600, fontSize: '0.88rem' }}
               >
-                <Sparkles size={16} />
+                <Compass size={16} />
                 <span>Find Peer Matches</span>
               </Link>
               <Link
