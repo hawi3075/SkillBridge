@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, ArrowRight, Check, X, Shield, Users, Clock, Video, Star } from 'lucide-react';
+import { ArrowRight, Check, X, Shield, Users, Clock, Video, Star } from 'lucide-react';
 
 export const HowItWorksPage = () => {
   return (
