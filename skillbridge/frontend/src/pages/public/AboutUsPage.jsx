@@ -32,7 +32,7 @@ export const AboutUsPage = () => {
                 <h5 className="fw-bold text-dark mb-3">Our Core Principles</h5>
                 <ul className="list-unstyled mb-0 d-flex flex-column gap-3">
                   <li className="d-flex align-items-start gap-2">
-                    <span className="p-1 bg-primary text-white rounded-circle"><Sparkles size={14} /></span>
+                    <span className="p-1 bg-primary text-white rounded-circle"><BookOpen size={14} /></span>
                     <div>
                       <strong className="text-dark">Radical Accessibility:</strong> Quality 1-on-1 education should never depend on financial privilege.
                     </div>
