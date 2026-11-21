@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, ArrowRightLeft, MapPin, CheckCircle, ChevronDown, ChevronUp, Send } from 'lucide-react';
+import { ArrowRightLeft, MapPin, CheckCircle, ChevronDown, ChevronUp, Send } from 'lucide-react';
 import StarRating from '../common/StarRating';
 
 export const MatchCard = ({ match, onProposeExchange }) => {
