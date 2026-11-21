@@ -326,14 +326,14 @@ export const AdminDashboardPage = () => {
           </div>
         </div>
 
-        {/* Skill Exchanges */}
+       
         <div className="col-sm-6 col-lg-3">
           <div className="admin-kpi-card kpi-emerald">
             <div className="d-flex align-items-center justify-content-between mb-2">
               <span className="text-muted text-uppercase fw-bold" style={{ fontSize: '0.72rem', letterSpacing: '0.05em' }}>
                 SKILL EXCHANGES
               </span>
-              <div className="admin-kpi-icon" style={{ backgroundColor: '#ECFDF5', color: '#10B981' }}>
+              <div className="admin-kpiS-icon" style={{ backgroundColor: '#ECFDF5', color: '#10B981' }}>
                 <ArrowRightLeft size={20} />
               </div>
             </div>
