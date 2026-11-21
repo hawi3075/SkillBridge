@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { notificationApi } from '../../services/api';
 import {
-  Compass, Users, HelpCircle, Bell, MessageSquare, Sparkles,
+  Compass, Users, HelpCircle, Bell, MessageSquare, ArrowRightLeft,
   LogOut, User, ShieldAlert, GraduationCap, Calendar, CheckCheck,
   Menu, X, Search, ArrowRight, Zap
 } from 'lucide-react';
