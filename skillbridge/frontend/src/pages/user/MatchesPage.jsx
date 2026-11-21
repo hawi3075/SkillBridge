@@ -95,7 +95,7 @@ export const MatchesPage = () => {
         <LoadingSkeleton count={4} type="card" />
       ) : filteredMatches.length === 0 ? (
         <EmptyState
-          icon={Sparkles}
+          icon={Users}
           title="No compatible matches with current filters"
           description="Try loosening your filters, or add more skills to your teaching inventory and learning wishlist to expand compatibility."
           actionLabel="Clear Filter"
