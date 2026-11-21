@@ -502,7 +502,7 @@ export const AdminDashboardPage = () => {
             </div>
           </div>
 
-          {/* Category Distribution Bar Chart */}
+        
           <div className="col-lg-5">
             <div className="admin-card p-4 h-100">
               <div className="d-flex justify-content-between align-items-center mb-1">

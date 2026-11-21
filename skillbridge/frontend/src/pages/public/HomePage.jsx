@@ -6,7 +6,6 @@ import UserCard from '../../components/cards/UserCard';
 import LoadingSkeleton from '../../components/common/LoadingSkeleton';
 import Modal from '../../components/common/Modal';
 import {
-  Sparkles,
   ArrowRight,
   Search,
   CheckCircle2,
