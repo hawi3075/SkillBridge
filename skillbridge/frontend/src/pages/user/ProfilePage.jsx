@@ -19,7 +19,7 @@ import {
   Twitter,
   Linkedin,
   Calendar,
-  Sparkles,
+  BookOpen,
   ExternalLink,
   ShieldCheck,
   Award,

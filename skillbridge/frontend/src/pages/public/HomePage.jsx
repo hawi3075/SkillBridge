@@ -515,7 +515,7 @@ export const HomePage = () => {
             <div className="col-md-4">
               <div className="p-3 bg-light rounded-3 border text-center h-100">
                 <div className="mx-auto mb-2 p-2 bg-primary-subtle rounded-circle d-inline-flex text-primary">
-                  <Sparkles size={20} />
+                  <Users size={20} />
                 </div>
                 <h6 className="fw-bold text-dark small mb-1">1. Smart Matching</h6>
                 <p className="text-muted small mb-0" style={{ fontSize: '0.75rem' }}>
