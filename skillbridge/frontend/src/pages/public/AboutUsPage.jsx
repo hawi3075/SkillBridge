@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Globe, Heart, Shield, Target, Users } from 'lucide-react';
+import { BookOpen, Globe, Heart, Shield, Target, Users } from 'lucide-react';
 
 export const AboutUsPage = () => {
   return (
