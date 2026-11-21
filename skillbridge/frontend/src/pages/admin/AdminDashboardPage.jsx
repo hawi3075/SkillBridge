@@ -27,7 +27,6 @@ import {
   TrendingUp,
   RefreshCw,
   GraduationCap,
-  Sparkles,
   ExternalLink,
   UserCheck,
   UserX,
