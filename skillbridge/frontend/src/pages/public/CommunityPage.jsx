@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Users, MessageSquare, Sparkles, BookOpen, Heart, ArrowRight } from 'lucide-react';
+import { Users, MessageSquare, BookOpen, Heart, ArrowRight } from 'lucide-react';
 
 export const CommunityPage = () => {
   const hubs = [
