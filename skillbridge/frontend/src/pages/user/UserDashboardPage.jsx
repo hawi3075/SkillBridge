@@ -363,7 +363,7 @@ export const UserDashboardPage = () => {
             <LoadingSkeleton count={2} type="card" />
           ) : filteredMatches.length === 0 ? (
             <EmptyState
-              icon={Sparkles}
+              icon={Users}
               title="No compatible matches yet"
               description="Add more skills to your teaching inventory and learning wishlist so the matching engine can find peers with reciprocal interests!"
               actionLabel="Add Skills Now"
