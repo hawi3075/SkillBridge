@@ -1,9 +1,9 @@
 import React from 'react';
-import { Sparkles } from 'lucide-react';
+import { Inbox } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const EmptyState = ({
-  icon: Icon = Sparkles,
+  icon: Icon = Inbox,
   title = 'No items found',
   description = 'There are no records to display at this moment.',
   actionLabel = null,
