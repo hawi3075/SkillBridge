@@ -351,7 +351,7 @@ export const AdminDashboardPage = () => {
           </div>
         </div>
 
-        {/* Safety & Reports */}
+      
         <div className="col-sm-6 col-lg-3">
           <div className="admin-kpi-card kpi-rose">
             <div className="d-flex align-items-center justify-content-between mb-2">
