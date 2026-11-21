@@ -364,7 +364,7 @@ export const UserProfilePage = () => {
                       justifyContent: 'center'
                     }}
                   >
-                    <Sparkles size={18} />
+                    <BookOpen size={18} />
                   </div>
                   <h5 className="fw-bold text-dark mb-0">Skills They Want to Learn</h5>
                 </div>
