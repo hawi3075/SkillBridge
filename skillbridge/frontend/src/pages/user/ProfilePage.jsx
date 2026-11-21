@@ -368,7 +368,7 @@ export const ProfilePage = () => {
           className={`profile-tab-pill ${activeTab === 'LEARNING' ? 'active' : ''}`}
           onClick={() => setActiveTab('LEARNING')}
         >
-          <Sparkles size={15} />
+          <BookOpen size={15} />
           <span>Learning Wishlist</span>
           <span className="badge rounded-pill bg-light text-dark border px-2" style={{ fontSize: '0.7rem' }}>
             {wantedSkills.length}
@@ -700,7 +700,7 @@ export const ProfilePage = () => {
 
               {wantedSkills.length === 0 ? (
                 <div className="text-center py-5 border rounded-3 border-dashed bg-light">
-                  <Sparkles size={32} className="text-muted mb-2" />
+                  <BookOpen size={32} className="text-muted mb-2" />
                   <h6 className="fw-bold text-dark mb-1">Your wishlist is empty</h6>
                   <p className="text-muted small mb-0" style={{ maxWidth: '320px', margin: '0 auto' }}>
                     Add skills you want to learn so SkillBridge can calculate high-compatibility matches for you.

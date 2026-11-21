@@ -11,7 +11,7 @@ import {
   MapPin,
   Briefcase,
   GraduationCap,
-  Sparkles,
+  BookOpen,
   Send,
   MessageSquare,
   Globe,
@@ -24,7 +24,6 @@ import {
   ExternalLink,
   ShieldCheck,
   Award,
-  BookOpen,
   ArrowRightLeft
 } from 'lucide-react';
 
