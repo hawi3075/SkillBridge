@@ -4,7 +4,7 @@ import MatchCard from '../../components/cards/MatchCard';
 import ProposeExchangeModal from '../../components/forms/ProposeExchangeModal';
 import LoadingSkeleton from '../../components/common/LoadingSkeleton';
 import EmptyState from '../../components/common/EmptyState';
-import { Sparkles, Filter, CheckCircle2 } from 'lucide-react';
+import { Users, Filter, CheckCircle2 } from 'lucide-react';
 
 export const MatchesPage = () => {
   const [matches, setMatches] = useState([]);
