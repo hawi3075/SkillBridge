@@ -762,7 +762,7 @@ export const AdminDashboardPage = () => {
             </div>
           </div>
 
-          {/* Categories Grid */}
+          
           <div className="row g-3">
             {categories.map((cat) => (
               <div key={cat.id} className="col-md-6 col-lg-4">
