@@ -732,7 +732,7 @@ export const AdminDashboardPage = () => {
     
       {activeTab === 'CATEGORIES' && (
         <div>
-          {/* Taxonomy Header & Action Buttons */}
+          
           <div className="admin-card p-3 p-md-4 mb-4">
             <div className="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3">
               <div>
