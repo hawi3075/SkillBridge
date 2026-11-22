@@ -729,7 +729,7 @@ export const AdminDashboardPage = () => {
         </div>
       )}
 
-      {/* 6. Tab 3: Skills & Taxonomy */}
+    
       {activeTab === 'CATEGORIES' && (
         <div>
           {/* Taxonomy Header & Action Buttons */}
