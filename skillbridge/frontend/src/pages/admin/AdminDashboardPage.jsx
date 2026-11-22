@@ -795,7 +795,7 @@ export const AdminDashboardPage = () => {
                       {cat.description || 'No description available for this category.'}
                     </p>
 
-                    {/* Skill tags preview */}
+                    
                     {cat.skills && cat.skills.length > 0 && (
                       <div className="d-flex flex-wrap gap-1.5 mb-3">
                         {cat.skills.slice(0, 4).map((sk) => (
