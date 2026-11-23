@@ -6,7 +6,7 @@ export const AboutUsPage = () => {
   return (
     <div className="py-5 bg-light min-vh-100">
       <div className="container">
-        {/* Hero */}
+        
         <div className="text-center mb-5">
           <span className="badge bg-primary-subtle text-primary px-3 py-1 rounded-pill mb-2">Our Mission</span>
           <h1 className="fw-extrabold text-dark mb-3">Democratizing Global Education Through Peer Exchange</h1>
