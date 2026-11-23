@@ -65,7 +65,7 @@ export const CommunityPage = () => {
           ))}
         </div>
 
-        {/* Guidelines */}
+        
         <div className="sb-card p-4 p-md-5 bg-white">
           <h4 className="fw-bold text-dark mb-3">Community Code of Conduct</h4>
           <div className="row g-4 text-muted small" style={{ lineHeight: 1.6 }}>
