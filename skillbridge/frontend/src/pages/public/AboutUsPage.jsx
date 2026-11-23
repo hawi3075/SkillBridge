@@ -55,7 +55,7 @@ export const AboutUsPage = () => {
           </div>
         </div>
 
-        {/* Platform Milestones */}
+        
         <div className="row g-4 text-center mb-5">
           <div className="col-md-4">
             <div className="sb-card p-4 bg-white h-100">
