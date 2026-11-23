@@ -834,7 +834,7 @@ export const AdminDashboardPage = () => {
             ))}
           </div>
 
-          {/* Modal: Add Category */}
+          
           <Modal
             isOpen={isCategoryModalOpen}
             onClose={() => setIsCategoryModalOpen(false)}
