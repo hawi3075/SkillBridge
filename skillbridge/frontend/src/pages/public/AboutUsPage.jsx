@@ -15,7 +15,7 @@ export const AboutUsPage = () => {
           </p>
         </div>
 
-        {/* Story Section */}
+  
         <div className="sb-card p-4 p-md-5 bg-white mb-5">
           <div className="row align-items-center g-5">
             <div className="col-lg-6">
