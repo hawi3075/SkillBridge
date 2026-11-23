@@ -41,7 +41,7 @@ export const CommunityPage = () => {
           </p>
         </div>
 
-        {/* Hubs Grid */}
+        
         <div className="row g-4 mb-5">
           {hubs.map((hub, idx) => (
             <div key={idx} className="col-md-6">
