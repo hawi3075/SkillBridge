@@ -946,7 +946,7 @@ export const AdminDashboardPage = () => {
         </div>
       )}
 
-      {/* 7. Tab 4: Reports & Trust Moderation */}
+     
       {activeTab === 'REPORTS' && (
         <div className="admin-card p-4">
           <div className="d-flex justify-content-between align-items-center mb-4">
