@@ -874,7 +874,7 @@ export const AdminDashboardPage = () => {
             </form>
           </Modal>
 
-          {/* Modal: Add Skill */}
+          
           <Modal
             isOpen={isSkillModalOpen}
             onClose={() => setIsSkillModalOpen(false)}
