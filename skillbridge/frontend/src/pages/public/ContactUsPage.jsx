@@ -86,6 +86,7 @@ export const ContactUsPage = () => {
             <div className="sb-card p-4 p-md-5 bg-white">
               <h4 className="fw-bold text-dark mb-4">Send Us a Message</h4>
 
+
               {submitted ? (
                 <div className="text-center py-5">
                   <div className="p-3 bg-success-subtle text-success rounded-circle d-inline-flex mb-3">
