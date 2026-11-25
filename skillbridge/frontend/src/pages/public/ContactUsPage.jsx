@@ -82,7 +82,6 @@ export const ContactUsPage = () => {
             </div>
           </div>
 
-          {/* Form */}
           <div className="col-lg-7">
             <div className="sb-card p-4 p-md-5 bg-white">
               <h4 className="fw-bold text-dark mb-4">Send Us a Message</h4>
