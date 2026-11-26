@@ -181,7 +181,7 @@ export const ExploreSkillsPage = () => {
           </span>
         </div>
 
-        {/* Skills Grid */}
+        
         {loading ? (
           <LoadingSkeleton count={6} type="card" />
         ) : skills.length === 0 ? (
