@@ -85,7 +85,7 @@ export const HomePage = () => {
     <div className="overflow-hidden">
       
       <section className="hero-section position-relative">
-        {/* Soft Organic Background Wave Shape */}
+        
         <div className="hero-wave-bg" />
         <svg
           className="position-absolute top-0 end-0 opacity-25 d-none d-lg-block"
