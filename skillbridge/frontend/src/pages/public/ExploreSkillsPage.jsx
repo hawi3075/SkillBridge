@@ -174,7 +174,7 @@ export const ExploreSkillsPage = () => {
           </form>
         </div>
 
-        {/* Results Counter */}
+        
         <div className="d-flex justify-content-between align-items-center mb-4">
           <span className="text-muted small">
             Showing <strong>{skills.length}</strong> skills available for exchange
