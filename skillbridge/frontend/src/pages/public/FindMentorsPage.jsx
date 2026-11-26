@@ -187,7 +187,7 @@ export const FindMentorsPage = () => {
           </span>
         </div>
 
-        {/* Grid */}
+        
         {loading ? (
           <LoadingSkeleton count={6} type="card" />
         ) : mentors.length === 0 ? (
