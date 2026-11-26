@@ -83,7 +83,7 @@ export const HomePage = () => {
 
   return (
     <div className="overflow-hidden">
-      {/* 1. Hero Section (Updated to match design) */}
+      
       <section className="hero-section position-relative">
         {/* Soft Organic Background Wave Shape */}
         <div className="hero-wave-bg" />
