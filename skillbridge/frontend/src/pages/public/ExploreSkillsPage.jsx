@@ -115,7 +115,7 @@ export const ExploreSkillsPage = () => {
           ))}
         </div>
 
-        {/* Filter & Search Bar */}
+        
         <div className="sb-card p-4 mb-4 bg-white">
           <form onSubmit={handleSearchSubmit} className="row g-3">
             <div className="col-lg-5">
