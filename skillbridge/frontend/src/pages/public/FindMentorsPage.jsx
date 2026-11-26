@@ -208,7 +208,7 @@ export const FindMentorsPage = () => {
           </div>
         )}
 
-        {/* Propose Exchange Modal */}
+        
         {selectedCandidate && (
           <ProposeExchangeModal
             isOpen={isModalOpen}
