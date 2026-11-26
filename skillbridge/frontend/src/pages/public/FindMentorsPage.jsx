@@ -180,7 +180,7 @@ export const FindMentorsPage = () => {
           </form>
         </div>
 
-        {/* Results Info */}
+        
         <div className="d-flex justify-content-between align-items-center mb-4">
           <span className="text-muted small">
             Found <strong>{mentors.length}</strong> active mentors ready to exchange skills
