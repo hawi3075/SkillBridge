@@ -112,7 +112,7 @@ export const HomePage = () => {
           <div className="row align-items-center g-5 py-2">
             {/* Left Content Column */}
             <div className="col-lg-6">
-              {/* Pill Tag */}
+              
               <div
                 className="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill"
                 style={{
