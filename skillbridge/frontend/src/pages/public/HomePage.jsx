@@ -158,7 +158,7 @@ export const HomePage = () => {
                 </span>
               </h1>
 
-              {/* Subtitle */}
+              
               <p className="text-muted mb-4" style={{ maxWidth: '520px', fontSize: '1.1rem', lineHeight: 1.6 }}>
                 SkillBridge connects students with skills, resources, and opportunities to build a successful career through 1-on-1 reciprocal peer learning.
               </p>
