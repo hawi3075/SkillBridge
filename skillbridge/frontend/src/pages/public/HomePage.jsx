@@ -163,7 +163,7 @@ export const HomePage = () => {
                 SkillBridge connects students with skills, resources, and opportunities to build a successful career through 1-on-1 reciprocal peer learning.
               </p>
 
-              {/* Action Buttons */}
+              
               <div className="d-flex flex-wrap align-items-center gap-3 mb-4">
                 <Link
                   to="/register"
