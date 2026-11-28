@@ -204,7 +204,7 @@ export const HomePage = () => {
           
             <div className="col-lg-6">
               <div className="position-relative">
-                {/* Organic Backdrop Gradient Blob */}
+              
                 <div
                   className="position-absolute"
                   style={{
