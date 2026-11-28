@@ -56,7 +56,7 @@ export const UserLayout = () => {
              
               <nav className="d-flex flex-column gap-1">
                 {isAdminView ? (
-                  // Dedicated Admin Navigation
+                
                   <>
                     <NavLink to="/admin/dashboard" end className={({ isActive }) => `sidebar-nav-item ${isActive ? 'active' : ''}`}>
                       <ShieldAlert size={18} />
