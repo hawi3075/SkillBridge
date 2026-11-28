@@ -190,7 +190,7 @@ export const HomePage = () => {
                 </button>
               </div>
 
-              {/* Trust Indicators */}
+              
               <div className="d-flex flex-wrap align-items-center gap-4 text-muted small pt-1">
                 <span className="d-inline-flex align-items-center gap-1">
                   <CheckCircle2 size={16} color="#10B981" /> 100% Free Peer Exchanges
