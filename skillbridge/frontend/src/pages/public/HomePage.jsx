@@ -201,7 +201,7 @@ export const HomePage = () => {
               </div>
             </div>
 
-            {/* Right Visual Composition with Floating Cards */}
+          
             <div className="col-lg-6">
               <div className="position-relative">
                 {/* Organic Backdrop Gradient Blob */}
