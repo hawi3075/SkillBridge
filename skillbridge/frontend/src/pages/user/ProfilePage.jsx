@@ -19,7 +19,6 @@ import {
   Twitter,
   Linkedin,
   Calendar,
-  BookOpen,
   ExternalLink,
   ShieldCheck,
   Award,
