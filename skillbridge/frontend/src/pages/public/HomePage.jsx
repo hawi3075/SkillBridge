@@ -139,7 +139,7 @@ export const HomePage = () => {
                 to a{' '}
                 <span className="position-relative text-primary d-inline-block">
                   Better Future
-                  {/* Yellow/Gold Brush Stroke Underline */}
+                  
                   <svg
                     className="position-absolute start-0 w-100"
                     style={{ bottom: '-10px', height: '14px', zIndex: -1 }}
