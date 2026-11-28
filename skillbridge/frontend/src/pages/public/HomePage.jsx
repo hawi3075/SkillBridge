@@ -219,7 +219,7 @@ export const HomePage = () => {
                   }}
                 />
 
-                {/* Main Hero Image */}
+                
                 <div
                   className="position-relative overflow-hidden shadow-lg"
                   style={{
